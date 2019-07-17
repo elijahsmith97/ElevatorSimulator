@@ -21,8 +21,11 @@ public class Elevator {
      * Author: Elijah Smith
      * Issue #16 moveDown()
      */
-    public void moveDown(int destinationFloor) {
-        this.currentFloor = destinationFloor;
+    public void moveDown() {
+        int newCurrent = this.currentFloor - this.destinationFloor;
+        for(int i = 0; i < newCurrent; i++) {
+            this.currentFloor--;
+        }
     }
 
     /**
