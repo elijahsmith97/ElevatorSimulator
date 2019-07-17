@@ -23,8 +23,8 @@ public class Elevator {
      * Issue #16 moveDown()
      */
     public void moveDown() {
-        int newCurrent = this.currentFloor - this.destinationFloor;
-        for(int i = 0; i < newCurrent; i++) {
+        int decrementValue = this.currentFloor - this.destinationFloor;
+        for(int i = 0; i < decrementValue; i++) {
             this.currentFloor--;
         }
     }
