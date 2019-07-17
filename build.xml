@@ -1,6 +1,6 @@
 <project name="Test Project.">
    <property name = "lib.dir" value = "libs"/>
-   <property name = "src.dir" value = ""/>
+   <property name = "src.dir" value = "."/>
    <property name = "build.dir" value = "build"/>
    <property name = "test.src.dir" value = "tests"/>
    <property name = "test.build.dir" value = "${test.src.dir}/build"/>
