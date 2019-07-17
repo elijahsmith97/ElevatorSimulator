@@ -1,12 +1,40 @@
+/**
+ * 
+ */ 
+
 public class Elevator {
+    private int currentFloor;
+    private int destinationFloor;
+    private int numberOfFloors;
+    
     /**
      * Author: Elijah Smith
-     * Issue #9 moveUp() method
+     * Issue #18 Constructor
      */ 
-    public void moveUp() {
-        int newCurrent = this.destinationFloor - this.currentFloor;
+    public Elevator(int currentFloor, int destinationFloor, int numberOfFloors) {
+        this.currentFloor = currentFloor;
+        this.destinationFloor = destinationFloor;
+        this.numberOfFloors = numberOfFloors;
+    }
+
+    /**
+     * Author: Elijah Smith
+     * Issue #16 moveDown()
+     */
+    public void moveDown() {
+        int newCurrent = this.currentFloor - this.destinationFloor;
         for(int i = 0; i < newCurrent; i++) {
-            this.currentFloor++;
+            this.currentFloor--;
         }
     }
+
+    /**
+     * Author: Elijah Smith
+     * Issue #22 getter method
+     */ 
+    public int getCurrentFloor() {
+        return this.currentFloor;
+    }
 }
+
+
