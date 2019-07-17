@@ -1,5 +1,6 @@
 <project name="Test Project.">
    <property name = "lib.dir" value = "libs"/>
+   <property name = "src.dir" value = ""/>
    <property name = "build.dir" value = "build"/>
    <property name = "test.src.dir" value = "tests"/>
    <property name = "test.build.dir" value = "${test.src.dir}/build"/>
@@ -13,15 +14,15 @@
       <mkdir dir = "${test.src.dir}"/>
    </target>
    
-   <target name="compile" description="compile the source">
+   <target name="compile" depends = "init" description="compile the source">
       <mkdir dir = "${build.dir}"/>
-      <javac destdir = "${build.dir}" includeantruntime = "true"/>
+      <javac srcdir = "${src.dir}" destdir = "${build.dir}" includeantruntime = "true"/>
    </target>
 
    <target name="test" depends = "compile" description="Compile and run tests.">
       <mkdir dir = "${test.build.dir}"/>
       
-      <javac destdir = "${test.build.dir}" includes = "${lib.dir}/ant-junit.jar" includeantruntime = "true"/>
+      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" includes = "${lib.dir}/ant-junit.jar" includeantruntime = "true"/>
       
       <junit haltonfailure="true" printsummary = "true">
          <classpath location="lib/ant-junit.jar"/>
@@ -30,14 +31,8 @@
    </target>
 
    <target name="clean" description="Delete current build data.">
-      <delete>
-         <fileset dir = "${build.dir}">
-            <include name = "**/*.class"/>
-         </fileset>
-         <fileset dir = "${test.build.dir}">
-            <include name = "**/*.class"/>
-         </fileset>
-      </delete>
+      <delete dir = "${build.dir}"/>
+      <delete dir = "${test.build.dir}"/>>
    </target>
 
 </project>
