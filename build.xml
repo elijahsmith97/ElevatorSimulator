@@ -25,7 +25,7 @@
       <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" includes = "${lib.dir}/ant-junit.jar" includeantruntime = "true"/>
       
       <junit haltonfailure="true" printsummary = "true">
-         <classpath location="lib/ant-junit.jar"/>
+         <classpath location="${lib.dir}/ant-junit.jar"/>
          <test name = "${test.build.dir}/Test1"/>
       </junit>
    </target>
