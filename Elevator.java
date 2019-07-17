@@ -3,6 +3,7 @@
  */ 
 
 public class Elevator {
+
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
@@ -22,8 +23,7 @@ public class Elevator {
      * Issue #16 moveDown()
      */
     public void moveDown() {
-        int newCurrent = this.currentFloor - this.destinationFloor;
-        for(int i = 0; i < newCurrent; i++) {
+        while(this.currentFloor != this.destinationFloor) {
             this.currentFloor--;
         }
     }
@@ -35,6 +35,7 @@ public class Elevator {
     public int getCurrentFloor() {
         return this.currentFloor;
     }
+
 }
 
 
