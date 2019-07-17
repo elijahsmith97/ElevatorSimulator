@@ -3,6 +3,7 @@
  */ 
 
 public class Elevator {
+
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
@@ -35,6 +36,7 @@ public class Elevator {
     public int getCurrentFloor() {
         return this.currentFloor;
     }
+
 }
 
 
