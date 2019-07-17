@@ -26,7 +26,7 @@
       
       <junit haltonfailure="true" printsummary = "true">
          <classpath location="${lib.dir}/ant-junit.jar"/>
-         <test name = "${test.build.dir}/Test1"/>
+         <test name = "${test.build.dir}/*"/>
       </junit>
    </target>
 
