@@ -1,7 +1,15 @@
 /**
  *
  */
-import static org.junit.jupiter.api.Assertion.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public  
+public class  ElevatorTest {
+    @Test
+    public void testEvaluate() {
+        Elevator elevator = new Elevator(5, 1, 5);
+        elevator.moveDown();
+        int newCurrent = elevator.getCurrentFloor();
+        assertEquals(1, newCurrent);
+    }
+}
