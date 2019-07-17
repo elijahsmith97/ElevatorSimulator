@@ -32,7 +32,7 @@
 
    <target name="clean" description="Delete current build data.">
       <delete dir = "${build.dir}"/>
-      <delete dir = "${test.build.dir}"/>>
+      <delete dir = "${test.build.dir}"/>
    </target>
 
 </project>
