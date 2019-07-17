@@ -7,7 +7,7 @@ public class Issue12Test1
    public void testPassengerConstructor1()
    {
       Passenger pass = new Passenger(3, 10);
-      
+ 
       assertEquals(3, pass.getStartFloor());
       assertEquals(10, pass.getDestinationFloor());
    }
