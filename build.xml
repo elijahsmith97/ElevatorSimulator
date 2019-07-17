@@ -26,7 +26,11 @@
       
       <junit haltonfailure="true" printsummary = "true">
          <classpath location="${lib.dir}/ant-junit.jar"/>
-         <test name = "${test.build.dir}/*"/>
+         <batchtest>
+             <fileset dir="${test.build.dir}">
+               <include name="**/*Test*" />
+             </fileset>
+         </batchtest>     
       </junit>
    </target>
 
