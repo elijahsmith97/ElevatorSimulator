@@ -16,13 +16,13 @@
    
    <target name="compile" depends = "init" description="compile the source">
       <mkdir dir = "${build.dir}"/>
-      <javac srcdir = "${src.dir}" destdir = "${build.dir}" classpathref = "classpath.refid" includeantruntime = "true"/>
+      <javac srcdir = "${src.dir}" destdir = "${build.dir}" includeantruntime = "true"/>
    </target>
 
    <target name="test" depends = "compile" description="Compile and run tests.">
       <mkdir dir = "${test.build.dir}"/>
       
-      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" includes = "${lib.dir}/ant-junit.jar" includeantruntime = "true"/>
+      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" includes = "${lib.dir}/ant-junit.jar" classpathref = "classpath.refid" includeantruntime = "true"/>
       
       <junit haltonfailure="true" printsummary = "true">
          <classpath>
