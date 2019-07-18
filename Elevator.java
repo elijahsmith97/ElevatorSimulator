@@ -7,6 +7,7 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
+    private String[] floors;
     
     /**
      * Author: Elijah Smith
@@ -47,6 +48,14 @@ public class Elevator {
         return this.currentFloor;
     }
 
+            
+     /**
+      *Author: Erik Burr
+      * Issue #9 moveUp
+      */
+	public int getDestinationFloor() {
+		return this.destinationFloor;
+	}
 }
 
 
