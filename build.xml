@@ -28,7 +28,7 @@
          <classpath>
             <path refid = "classpath.refid"/>
             <fileset dir = "${lib.dir}">
-               <include name = "**/ant-junit.jar"/>
+               <include name = "ant-junit.jar"/>
             </fileset>
          </classpath>
          <batchtest>
