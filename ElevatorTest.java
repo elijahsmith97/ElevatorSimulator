@@ -7,12 +7,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 public class ElevatorTest {
 
-	Elevator elev = new Elevator(1,5,5);
+
 
 	@Test
 	public void testEvaluate() {
-		elev.move();
-		int newCurrent = getCurrentFloor();
-		assertEquals(1, newCurrent);	}
+	Elevator elev = new Elevator(1,5,5);
 
+		elev.moveUp();
+		int newCurrent = elev.getCurrentFloor();
+		assertEquals(1, newCurrent);	}
 }
