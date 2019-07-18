@@ -6,7 +6,7 @@
 
 public class Display {
 
-Elevator evelvator;
+Elevator elevator;
 Passenger passenger;
 
     public Display(Passenger passenger, Elevator elevator) {
