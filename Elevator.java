@@ -56,7 +56,6 @@ public class Elevator {
      public int getDestinationFloor() {
 	  return this.destinationFloor;
       }
-
 }
 
 
