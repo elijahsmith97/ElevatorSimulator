@@ -21,4 +21,12 @@ private int numberOfFloors;
 			while(this.currentFloor != this.destinationFloor) {
 			this.currentFloor--;}						   	 
 }
+		    /**
+     * Author: Elijah Smith
+     * Issue #22 getter method
+     */ 
+    public int getCurrentFloor() {
+        return this.currentFloor;
+    }
+		
 }
