@@ -1,12 +1,12 @@
 <project name="Test Project.">
-   <property name = "lib.dir" value = "./libs"/>
+   <property name = "lib.dir" value = "."/>
    <property name = "src.dir" value = "."/>
    <property name = "build.dir" value = "./build"/>
    <property name = "test.src.dir" value = "./tests"/>
    <property name = "test.build.dir" value = "${test.src.dir}/build"/>
 
    <path id='classpath.refid'>
-      <fileset dir="${lib.dir}" includes="ant-junit.jar" />
+      <fileset dir="${libs}" includes="ant-junit.jar" />
    </path>
    
    <target name = "init" description = "Make necessary directories.">
@@ -22,7 +22,7 @@
    <target name="test" depends = "compile" description="Compile and run tests.">
       <mkdir dir = "${test.build.dir}"/>
       
-      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" classpathref = "classpath.refid" includes = "${lib.dir}/ant-junit.jar" includeantruntime = "true"/>
+      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" classpathref = "classpath.refid"  includeantruntime = "true"/>
       
       <junit haltonfailure="true" printsummary = "true">
          <classpath>
