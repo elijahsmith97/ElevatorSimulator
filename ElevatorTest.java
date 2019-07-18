@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class  ElevatorTest {
     /**
-     * Author :
+     * Author: ES
      */ 
     @Test
     public void testEvaluate() {
@@ -15,6 +15,17 @@ public class  ElevatorTest {
         int newCurrent = elevator.getCurrentFloor();
         assertEquals(1, newCurrent);
     }
-
-
+    
+    
+    /*
+    * Author: Erik Burr
+    * Test method for move up
+    */
+    
+	@Test
+	public void testEvaluate() {
+	    Elevator elev = new Elevator(1,5,5);
+		elev.moveUp();
+		int newCurrent = elev.getCurrentFloor();
+		assertEquals(1, newCurrent);	}
 }
