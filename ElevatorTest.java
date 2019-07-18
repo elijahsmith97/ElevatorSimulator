@@ -16,7 +16,6 @@ public class  ElevatorTest {
         assertEquals(1, newCurrent);
     }
     
-    
     /*
     * Author: Erik Burr
     * Test method for move up
@@ -24,7 +23,7 @@ public class  ElevatorTest {
     
 	@Test
 	public void testEvaluate() {
-	    Elevator elev = new Elevator(1,5,5);
+	  Elevator elev = new Elevator(1,5,5);
 		elev.moveUp();
 		int newCurrent = elev.getCurrentFloor();
 		assertEquals(1, newCurrent);	}
