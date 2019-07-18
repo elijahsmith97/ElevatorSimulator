@@ -7,7 +7,6 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
-    private String[] floors;
     
     /**
      * Author: Elijah Smith
