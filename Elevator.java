@@ -22,5 +22,3 @@ private int numberOfFloors;
 			this.currentFloor--;}						   	 
 }
 }
-
-}
