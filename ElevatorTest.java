@@ -1,18 +1,29 @@
-/*
- * JUnit5 test for Evelator class in the move method
+/**
+ *
  */
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
-public class ElevatorTest {
 
-
-
+public class  ElevatorTest {
+    /**
+     * Author: ES
+     */ 
+    @Test
+    public void testEvaluate() {
+        Elevator elevator = new Elevator(5, 1, 5);
+        elevator.moveDown();
+        int newCurrent = elevator.getCurrentFloor();
+        assertEquals(1, newCurrent);
+    }
+    
+    /*
+    * Author: Erik Burr
+    * Test method for move up
+    */
+    
 	@Test
 	public void testEvaluate() {
-	Elevator elev = new Elevator(1,5,5);
-
+	  Elevator elev = new Elevator(1,5,5);
 		elev.moveUp();
 		int newCurrent = elev.getCurrentFloor();
 		assertEquals(1, newCurrent);	}
