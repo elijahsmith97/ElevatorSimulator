@@ -30,31 +30,16 @@
             <path location = "${test.build.dir}"/>
             <path location = "${lib.dir}/ant-junit.jar"/>
          </classpath>
-      </javac>     
-          
+      </javac>      
+
       <java fork = "true" dir = "${test.build.dir}" classname = "org.junit.runner.JUnitCore">
-         <arg value = "Issue12Test1"/> 
+         <arg line = "Tests"/> 
          <classpath>
             <path location = "${build.dir}"/>
             <path location = "${test.build.dir}"/>
             <path location = "${lib.dir}/ant-junit.jar"/>
          </classpath>
       </java>
-      <!--
-      <junit haltonfailure="true" printsummary = "true">
-         <classpath>
-            <path refid = "classpath.refid"/>
-            <fileset dir = "${lib.dir}">
-               <include name = "ant-junit.jar"/>
-            </fileset>
-         </classpath>
-         <batchtest>
-             <fileset dir="${test.build.dir}">
-               <include name="**/*Test*" />
-             </fileset>
-         </batchtest>     
-      </junit>
-      -->
    </target>
 
    <target name="clean" description="Delete current build data.">
