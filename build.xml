@@ -1,0 +1,50 @@
+<project name="Test Project." basedir = ".">
+   <property name = "lib.dir" value = "./libs"/>
+   <property name = "src.dir" value = "./src"/>
+   <property name = "build.dir" value = "./build"/>
+   <property name = "test.src.dir" value = "./tests"/>
+   <property name = "test.build.dir" value = "${test.src.dir}/build"/>
+
+   <path id="classpath">
+      <fileset dir="${lib.dir}" includes="ant-junit.jar" />
+      <pathelement path = "${build.dir}"/>
+   </path>
+   
+   <target name = "init" description = "Make necessary directories.">
+      <mkdir dir = "${src.dir}"/>
+      <mkdir dir = "${lib.dir}"/>
+      <mkdir dir = "${test.src.dir}"/>
+   </target>
+   
+   <target name="compile" depends = "init" description="compile the source">
+      <mkdir dir = "${build.dir}"/>
+      <javac srcdir = "${src.dir}" destdir = "${build.dir}"  includeantruntime = "true"/>
+   </target>
+
+   <target name="test" depends = "compile" description="Compile and run tests.">
+      <mkdir dir = "${test.build.dir}"/>
+      
+      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" includeantruntime = "true">
+         <classpath>
+            <path location = "${build.dir}"/>
+            <path location = "${test.build.dir}"/>
+            <path location = "${lib.dir}/ant-junit.jar"/>
+         </classpath>
+      </javac>      
+
+      <java fork = "true" dir = "${test.build.dir}" classname = "org.junit.runner.JUnitCore">
+         <arg line = "Tests"/> 
+         <classpath>
+            <path location = "${build.dir}"/>
+            <path location = "${test.build.dir}"/>
+            <path location = "${lib.dir}/ant-junit.jar"/>
+         </classpath>
+      </java>
+   </target>
+
+   <target name="clean" description="Delete current build data.">
+      <delete dir = "${build.dir}"/>
+      <delete dir = "${test.build.dir}"/>
+   </target>
+
+</project>
