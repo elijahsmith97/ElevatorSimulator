@@ -40,6 +40,7 @@ public class Elevator {
             this.currentFloor--;
          }
      }
+    }
 
     /**
      * Author: Elijah Smith
