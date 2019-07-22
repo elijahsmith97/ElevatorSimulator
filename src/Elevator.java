@@ -51,7 +51,7 @@ public class Elevator {
 	    
      /**
       * Author: Erik Burr
-      * Issue #9 moveUp
+      * Issue #9 destinationFloor
       */
      public int getDestinationFloor() {
 	  return this.destinationFloor;
