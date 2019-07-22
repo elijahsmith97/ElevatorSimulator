@@ -10,7 +10,7 @@ public class ElevSim {
          //creating the objects
          Elevator elev = new Elevator(elev.getCurrentFloor(), elev.getDestinationFloor(), elev.getnumberOfFloors());
          Passenger pass = new Passenger(pass.getDestinationFloor());
-         Display status = new Display (Passenger pass, Elevator elev);
+         Display status = new Display(Passenger pass, Elevator elev);
          
          //displaying current floor or pasenger and elevator
          status.display_currentP();
@@ -41,7 +41,7 @@ public class ElevSim {
 
 
          if (df > elev.getCurrentFloor()) {
-             elev.moveUp()
+             elev.moveUp();
              pass.setCurrentfloor(elev.getCurrentFloor());
          }
          else if (df < elev.getCurrentFloor()) {

@@ -35,7 +35,7 @@ Passenger passenger;
      */
     public void display_destP () {
 
-        System.out.printlnP("Passenger has arrived at floor " + passenger.getDestinationFloor());
+        System.out.println("Passenger has arrived at floor " + passenger.getDestinationFloor());
     }
     
     /*
