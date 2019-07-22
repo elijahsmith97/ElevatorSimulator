@@ -41,6 +41,22 @@ public class Elevator {
          }
      }
 
+	    
+   /**
+    * Author: Erik Burr
+    * Issue #9 moveUp
+    */
+    public void PushUp(){}
+	    
+	    
+   /**
+    * Author: Erik Burr
+    * Issue #9 moveUp
+    */
+    public void PushDown(){}
+	    
+	    
+	    
     /**
      * Author: Elijah Smith
      * Issue #22 getter method
