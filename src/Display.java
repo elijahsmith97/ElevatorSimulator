@@ -51,7 +51,7 @@ Passenger passenger;
      */
     public void display_destE () {
     
-        System.out.println("Eleavtor arrives at floor " + elevator.getDestinationFloor());
+        System.out.println("Elevator arrives at floor " + elevator.getDestinationFloor());
     }
 
 

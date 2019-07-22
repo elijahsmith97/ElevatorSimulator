@@ -30,12 +30,14 @@ public class ElevSim {
          elev.display_destE();//could cause trouble check with team about this method call
          */
         
-         System.out.println("Elevator has arrived...");   
+         System.out.println("Elevator has arrived...");  
          Scanner kb = new Scanner(System.in);
          System.out.print("Enter the desired floor: ");
          int df = kb.nextInt(); //df is desired floor
          
          Passenger pass = new Passenger(df);
+         //Will need in the near future
+         //RandomPassenger randomPass = new RandomPassenger();
          Elevator elev = new Elevator(pass.getStartFloor(), pass.getDestinationFloor(), 100);
          Display status = new Display(pass, elev);
          
