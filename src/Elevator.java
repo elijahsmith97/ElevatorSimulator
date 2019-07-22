@@ -56,6 +56,22 @@ public class Elevator {
      public int getDestinationFloor() {
 	  return this.destinationFloor;
       }
+
+      public int getNumberOfFloors() {
+        return this.numberOfFloors;
+      }
+
+      public void setCurrentFloor(int currentFloor) {
+        this.currentFloor = currentFloor;
+      }
+
+      public void setDestinationFloor(int destinationFloor) {
+        this.destinationFloor = destinationFloor;
+      }
+
+      public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+      }
 }
 
 

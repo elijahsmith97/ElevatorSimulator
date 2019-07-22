@@ -24,4 +24,14 @@ public class Passenger
    {
       return this.destinationFloor;
    }
+
+   public void setStartFloor(int startFloor) 
+   {
+      this.startFloor = startFloor;
+   }
+
+   public void setDestinationFloor(int destinationFloor)
+   {
+       this.destinationFloor = destinationFloor;
+   }
 }
