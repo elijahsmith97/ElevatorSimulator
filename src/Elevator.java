@@ -39,7 +39,7 @@ public class Elevator {
             this.currentFloor++;
         }
      }
-
+    
     /**
      * Author: Elijah Smith
      * Issue #22 getter method

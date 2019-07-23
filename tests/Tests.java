@@ -3,6 +3,53 @@ import org.junit.Test;
 
 public class Tests
 {
+   /**
+    * Author: Elijah Smith
+    * 
+    */
+   @Test
+   public void testMoveDown() {
+        Elevator elevator = new Elevator(5, 1, 5);
+        elevator.moveDown();
+        int newCurrent = elevator.getCurrentFloor();
+        assertEquals(1, newCurrent);      
+   }
+   
+   /**
+    * Author: Erik Burr
+    *
+    */
+   @Test
+   public void testMoveUp() {
+        Elevator elev = new Elevator(1, 5, 5);
+        elev.moveUp();
+        int newCurrent = elev.getCurrentFloor();
+        assertEquals(1, newCurrent);
+   }
+   /**
+    * Author: Erik Burr
+    *
+    */
+   @Test 
+   public void testFloorDifference() {
+        Elevator elev = new Elevator(1, 5, 5);
+        elev.floorDifference (3, 5);
+        int newCurrent = elev.getCurrentFloor();
+        assertEquals(2, newCurrent);
+   }
+   
+   /**
+    * Author: Elijah Smith
+    * 
+    */
+   @Test
+   public void testCurrentFloor() {
+        int currentFloor = 60;
+        int destinationFloor = 420;
+        int totalFloors = 600;
+        Elevator elevator = new Elevator(currentFloor, destinationFloor, totalFloors);
+   }
+
    @Test
    public void testPassengerConstructor1()
    {
