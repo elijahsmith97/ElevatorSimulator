@@ -12,6 +12,6 @@ public class ElevSim {
          int df = kb.nextInt(); //df is desired floor
 
          //hard coded 5 as the numberOfFloor parameter because Im not quite sure how to handle that now
-         Elevator evelvator = new Elevator(elevator.getCurrentFloor(), df, 5);
+         Elevator elevator = new Elevator(elevator.getCurrentFloor(), df, 5);
     }
 }
