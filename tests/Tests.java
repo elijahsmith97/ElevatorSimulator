@@ -26,17 +26,7 @@ public class Tests
         int newCurrent = elev.getCurrentFloor();
         assertEquals(1, newCurrent);
    }
-   /**
-    * Author: Erik Burr
-    *
-    */
-   @Test 
-   public void testFloorDifference() {
-        Elevator elev = new Elevator(1, 5, 5);
-        elev.floorDifference (3, 5);
-        int newCurrent = elev.getCurrentFloor();
-        assertEquals(2, newCurrent);
-   }
+
    
    /**
     * Author: Elijah Smith
