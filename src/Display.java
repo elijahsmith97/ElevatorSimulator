@@ -17,7 +17,9 @@ Passenger passenger;
     /*
      *Displays floor passenger is currently on
      */
-    public void display_currentP (Passenger passenger) {
+
+    public void display_currentP () {
+
         
         System.out.println("Passenger is on floor " + passenger.getStartFloor());
     }
@@ -25,23 +27,23 @@ Passenger passenger;
     /*
      *Displays the floor the passenger has selected
      */
-    public void display_selectP (Passenger passenger) {
-      
+
+    public void display_selectP () {
+
         System.out.println("Passenger has selected floor " + passenger.getDestinationFloor());
     }
     
     /*
      *Displays the floor the passenger has arrived at
      */
-    public void display_destP (Passenger passenger) {
-
-        System.out.printlnP("Passenger has arrived at floor " + passenger.getDestinationFloor());
+    public void display_destP () {
+        System.out.println("Passenger has arrived at floor " + passenger.getDestinationFloor());
     }
     
     /*
      *Displays the floor the elevator leaves from
      */
-    public void display_currentE (Elevator elevator) {
+    public void display_currentE () {
        
         System.out.println("Elevator leaves from floor " + elevator.getCurrentFloor());
     }
@@ -49,11 +51,8 @@ Passenger passenger;
     /*
      *Displays the floor the elevator has arrived at
      */
-    public void display_destE (Elevator elevator) {
+    public void display_destE () {
     
-        System.out.println("Eleavtor arrives at floor " + elevator.getDestinationFloor());
+        System.out.println("Elevator arrives at floor " + elevator.getDestinationFloor());
     }
-
-
-
 }
