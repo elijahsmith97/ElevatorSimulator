@@ -34,14 +34,12 @@ public class Elevator {
     * Issue #9 moveUp
     */
     public void moveUp(){
-        int newCurrent = this.currentFloor - this.destinationFloor;
+        int newCurrent = this.destinationFloor - this.currentFloor;
         for(int i = 0; i < newCurrent; i++) {
-            while(this.currentFloor != this.destinationFloor) {
-            this.currentFloor--;
-         }
+            this.currentFloor++;
+        }
      }
-    }
-
+    
     /**
      * Author: Elijah Smith
      * Issue #22 getter method
@@ -52,10 +50,26 @@ public class Elevator {
 	    
      /**
       * Author: Erik Burr
-      * Issue #9 destinationFloor
+      * Issue #9 moveUp
       */
      public int getDestinationFloor() {
 	  return this.destinationFloor;
+      }
+
+      public int getNumberOfFloors() {
+        return this.numberOfFloors;
+      }
+
+      public void setCurrentFloor(int currentFloor) {
+        this.currentFloor = currentFloor;
+      }
+
+      public void setDestinationFloor(int destinationFloor) {
+        this.destinationFloor = destinationFloor;
+      }
+
+      public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
       }
 }
 
