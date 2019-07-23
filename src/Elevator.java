@@ -44,18 +44,17 @@ public class Elevator {
 	    
    /**
     * Author: Erik Burr
-    * Issue #9 moveUp
+    * Issue #17 pushUp/pushDown
     */
-    public void PushUp(){}
-	    
-	    
-   /**
-    * Author: Erik Burr
-    * Issue #9 moveUp
-    */
-    public void PushDown(){}
-	    
-	    
+    public void pushUp(){
+    
+    }
+	    	    
+
+    public void PushDown(){
+    
+    }
+	   
 	    
     /**
      * Author: Elijah Smith
