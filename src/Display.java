@@ -17,11 +17,9 @@ Passenger passenger;
     /*
      *Displays floor passenger is currently on
      */
-<<<<<<< HEAD
-    public void display_currentP (Passenger passenger) {
-=======
+
     public void display_currentP () {
->>>>>>> issue2
+
         
         System.out.println("Passenger is on floor " + passenger.getStartFloor());
     }
@@ -29,11 +27,9 @@ Passenger passenger;
     /*
      *Displays the floor the passenger has selected
      */
-<<<<<<< HEAD
-    public void display_selectP (Passenger passenger) {
-=======
+
     public void display_selectP () {
->>>>>>> issue2
+
       
         System.out.println("Passenger has selected floor " + passenger.getDestinationFloor());
     }
