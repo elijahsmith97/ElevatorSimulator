@@ -4,7 +4,7 @@ public class Passenger
    private int destinationFloor;
    private boolean waiting;
    Elevator elev;
-   public Passenger(Elevator, elev, int startFloor, int destinationFloor)
+   public Passenger(Elevator elev, int startFloor, int destinationFloor)
    {
       this.elev = elev;
       this.startFloor = startFloor;
