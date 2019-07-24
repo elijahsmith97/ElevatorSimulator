@@ -5,8 +5,8 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
-    boolean[] pushedUp;
-    boolean[] pushedDown;    
+    private boolean[] pushedUp;
+    private boolean[] pushedDown;    
     private boolean stopped;    
     
     /**
