@@ -16,9 +16,9 @@ public class Elevator {
     public Elevator(int currentFloor, int destinationFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
         this.destinationFloor = destinationFloor;
-    	  this.numberOfFloors = numberOfFloors;
-   	  boolean[] pushedUp = new boolean[numberOfFloors];
-	    boolean[] pushedDown = new boolean[numberOfFloors];
+    	this.numberOfFloors = numberOfFloors;
+   	pushedUp = new boolean[numberOfFloors];
+	pushedDown = new boolean[numberOfFloors];
     }
 
     /**
