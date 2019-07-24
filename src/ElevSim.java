@@ -103,6 +103,7 @@ public class ElevSim {
                     break;
                 case 'd':
                     System.out.print("Going down to floor " + floorDecision + "\n");   
+                    break;
                 default:
                     decision = 's';
                     System.out.print("Exiting simulation...\n");
