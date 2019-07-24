@@ -1,6 +1,4 @@
-/**
- * 
- */ 
+import java.util.ArrayList;
 
 public class Elevator {
 
@@ -10,6 +8,7 @@ public class Elevator {
     private boolean[] pushedUp;
     private boolean[] pushedDown;
     private boolean stopped;
+
     /**
      * Author: Elijah Smith
      * Issue #18 Constructor
@@ -18,6 +17,8 @@ public class Elevator {
         this.currentFloor = currentFloor;
         this.destinationFloor = destinationFloor;
         this.numberOfFloors = numberOfFloors;
+    pushedUp = new boolean[numberOfFloors];
+    pushedDown = new boolean[numberOfFloors];
     }
 
     /**
@@ -33,41 +34,45 @@ public class Elevator {
     * Author: Elijah Smith
     * Issue #57/51 moveUp
     */
-    public void moveUp(){
+    public void moveUp() {
         currentFloor++;
         stopped = false;        
     }
-
+    
     /**
-     * Author: Elijah Smith
-     * stop(): boolean method
-     */
-    public void stop() {
-        this.stopped = true;
+    * Author: Erik Burr
+    * Issue #17 pushUp/pushDown
+    */
+    public void pushUp(int currentFloor){
+        pushedUp[currentFloor + 1] = true;   
+    }
+             
+    public void pushDown(int currentFloor){
+        pushedDown[currentFloor + 1] = true;  
     }
     
     /**
      * Author: Elijah Smith
-     * getStopped(): boolean
-     */ 
-    public boolean getStopped() {
-        return this.stopped;
-    }
-
-    /**
-     * Author: Elijah Smith
      * Issue #22 getter method
      */ 
-    public int getCurrentFloor() {
+      public int getCurrentFloor() {
         return this.currentFloor;
-     }
-	    
-     public int getDestinationFloor() {
-	  return this.destinationFloor;
       }
-
+  
+      public int getDestinationFloor() {
+      return this.destinationFloor;
+      }
+      
       public int getNumberOfFloors() {
         return this.numberOfFloors;
+      }
+
+      public void stop() {
+        this.stopped = true;
+      }
+
+      public boolean getStopped() {
+        return this.stopped;
       }
 
       public void setCurrentFloor(int currentFloor) {
@@ -82,5 +87,3 @@ public class Elevator {
         this.numberOfFloors = numberOfFloors;
       }
 }
-
-
