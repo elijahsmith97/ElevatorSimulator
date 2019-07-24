@@ -45,11 +45,11 @@ public class Elevator {
     * Issue #17 pushUp/pushDown
     */
     public void pushUp(int currentFloor){
-        pushedUp[currentFloor] = true;   
+        pushedUp[currentFloor + 1] = true;   
     }
              
     public void pushDown(int currentFloor){
-        pushedDown[currentFloor] = true;  
+        pushedDown[currentFloor + 1] = true;  
     }
     
     /**
