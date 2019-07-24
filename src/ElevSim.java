@@ -9,12 +9,17 @@ public class ElevSim {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int elevCurrent = 1;
-        int passCurrent = 1;
+        System.out.print("Which floor are you currently on? ");
+        int passCurrent = kb.nextInt();
+        int passDestination = 1;
         char decision = 'u';
+        int floorDecision = 1;
         String stringDecision = "";
         int maxFloors = 100;
+        
         //Elevator elev = new Elevator(maxFloors);
         //Controller control = new Controller(elev);
+        //PassengerManager passManager = new PassengerManager(//numberOfFloors?);
 
         while(Character.toLowerCase(decision) != 's') {
             System.out.print("Which direction would you like to go? "/* + elev.setCurrentFloor()*/);
@@ -36,10 +41,16 @@ public class ElevSim {
             
             if(decision == 'u') {
                 System.out.print("To which floor would you like to go up to? ");
+                floorDecision = kb.nextInt();
+                if(floorDecision > maxFloors || floorDecision < passCurrent)
+                    decision = 's';
                 //elev.moveUp(elevCurrent, passDestination);
             }
             if(decision == 'd') {
                 System.out.print("To which floor would you like to go down to? ");
+                floorDecision = kb.nextInt();
+                if(floorDecision > maxFloors || floorDecision < passCurrent)
+                    decision = 's';
                 //elev.moveDown(elevCurrent, passDestination);
             }
             
