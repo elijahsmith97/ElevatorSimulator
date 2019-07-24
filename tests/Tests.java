@@ -9,10 +9,10 @@ public class Tests
     */
    @Test
    public void testMoveDown() {
-        Elevator elevator = new Elevator(5, 1, 5);
+        Elevator elevator = new Elevator(5, 4, 5);
         elevator.moveDown();
         int newCurrent = elevator.getCurrentFloor();
-        assertEquals(1, newCurrent);      
+        assertEquals(4, newCurrent);      
    }
    
    /**
@@ -21,10 +21,10 @@ public class Tests
     */
    @Test
    public void testMoveUp() {
-        Elevator elev = new Elevator(1, 5, 5);
+        Elevator elev = new Elevator(1, 2, 5);
         elev.moveUp();
         int newCurrent = elev.getCurrentFloor();
-        assertEquals(1, newCurrent);
+        assertEquals(2, newCurrent);
    }
 
    
