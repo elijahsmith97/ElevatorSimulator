@@ -38,6 +38,22 @@ public class Elevator {
 
     /**
      * Author: Elijah Smith
+     * stop(): boolean method
+     */
+    public boolean stop() {
+        this.stopped = true;
+    }
+    
+    /**
+     * Author: Elijah Smith
+     * getStopped(): boolean
+     */ 
+    pubilc boolean getStopped() {
+        return this.stopped;
+    }
+
+    /**
+     * Author: Elijah Smith
      * Issue #22 getter method
      */ 
     public int getCurrentFloor() {
