@@ -48,7 +48,7 @@ public class Elevator {
      * Author: Elijah Smith
      * getStopped(): boolean
      */ 
-    pubilc boolean getStopped() {
+    public boolean getStopped() {
         return this.stopped;
     }
 
