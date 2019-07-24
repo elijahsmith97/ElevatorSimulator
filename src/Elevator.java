@@ -6,10 +6,8 @@ public class Elevator {
     private int destinationFloor;
     private int numberOfFloors;
     boolean[] pushedUp;
-    boolean[] pushedDown;
- 
-
-    
+    boolean[] pushedDown;    
+    private boolean stopped;    
     
     /**
      * Author: Elijah Smith
@@ -69,6 +67,14 @@ public class Elevator {
 
      public int getDestinationFloor() {
       return this.destinationFloor;
+      }
+
+      public boolean stop() {
+        this.stopped = true;
+      }
+
+      public boolean getStopped() {
+        return this.stopped;
       }
 
       public int getNumberOfFloors() {
