@@ -69,7 +69,6 @@ public class Elevator {
         return this.numberOfFloors;
       }
 
-
       public void stop() {
         this.stopped = true;
       }
