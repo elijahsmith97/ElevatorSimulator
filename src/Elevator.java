@@ -64,7 +64,6 @@ public class Elevator {
       return this.destinationFloor;
       }
       
-
       public int getNumberOfFloors() {
         return this.numberOfFloors;
       }
