@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  */ 
@@ -7,6 +9,9 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
+    ArrayList<Passenger> pushedUp = new ArrayList<Passenger>();
+    ArrayList<Passenger> pushedDown = new ArrayList<Passenger>();
+
     
     /**
      * Author: Elijah Smith
@@ -45,16 +50,16 @@ public class Elevator {
    /**
     * Author: Erik Burr
     * Issue #17 pushUp/pushDown
-    */
+    *
     public void pushUp(){
     
     }
 	    	    
 
-    public void PushDown(){
+    public void pushDown(){
     
     }
-	   
+*/    
 	    
     /**
      * Author: Elijah Smith
