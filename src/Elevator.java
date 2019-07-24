@@ -16,9 +16,9 @@ public class Elevator {
     public Elevator(int currentFloor, int destinationFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
         this.destinationFloor = destinationFloor;
-    	this.numberOfFloors = numberOfFloors;
-   	pushedUp = new boolean[numberOfFloors];
-	pushedDown = new boolean[numberOfFloors];
+        this.numberOfFloors = numberOfFloors;
+    pushedUp = new boolean[numberOfFloors];
+    pushedDown = new boolean[numberOfFloors];
     }
 
     /**
@@ -45,11 +45,11 @@ public class Elevator {
     * Issue #17 pushUp/pushDown
     */
     public void pushUp(int currentFloor){
-    	pushedUp[currentFloor] = true;   
+        pushedUp[currentFloor] = true;   
     }
-	         
+             
     public void pushDown(int currentFloor){
-    	pushedDown[currentFloor] = true;  
+        pushedDown[currentFloor] = true;  
     }
     
     /**
@@ -58,11 +58,17 @@ public class Elevator {
      */ 
       public int getCurrentFloor() {
         return this.currentFloor;
-     }
+      }
   
       public int getDestinationFloor() {
       return this.destinationFloor;
       }
+      
+
+      public int getNumberOfFloors() {
+        return this.numberOfFloors;
+      }
+
 
       public void stop() {
         this.stopped = true;
@@ -70,26 +76,6 @@ public class Elevator {
 
       public boolean getStopped() {
         return this.stopped;
-      }
-
-      public int getNumberOfFloors() {
-        return this.numberOfFloors;
-      }
-
-      public void setCurrentFloor(int currentFloor) {
-       this.currentFloor = currentFloor;
-      }
-
-      public void setDestinationFloor(int destinationFloor) {
-        this.destinationFloor = destinationFloor;
-      }
-
-      public void setNumberOfFloors(int numberOfFloors) {
-        this.numberOfFloors = numberOfFloors;
-      }
-
-      public int getNumberOfFloors() {
-        return this.numberOfFloors;
       }
 
       public void setCurrentFloor(int currentFloor) {
@@ -104,5 +90,3 @@ public class Elevator {
         this.numberOfFloors = numberOfFloors;
       }
 }
-
-
