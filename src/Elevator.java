@@ -69,7 +69,7 @@ public class Elevator {
       return this.destinationFloor;
       }
 
-      public boolean stop() {
+      public void stop() {
         this.stopped = true;
       }
 
