@@ -8,7 +8,7 @@ public class Elevator {
     ArrayList<Passenger> pushedUp = new ArrayList<Passenger>();
     ArrayList<Passenger> pushedDown = new ArrayList<Passenger>();
     Passenger pass = new Passenger(currentFloor); 
-
+    private boolean stopped;
     
     
     /**
@@ -73,6 +73,14 @@ public class Elevator {
       */
      public int getDestinationFloor() {
       return this.destinationFloor;
+      }
+
+      public boolean stop() {
+        this.stopped = true;
+      }
+
+      public boolean getStopped() {
+        return this.stopped;
       }
 
       public int getNumberOfFloors() {
