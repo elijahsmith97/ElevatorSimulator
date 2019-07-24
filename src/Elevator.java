@@ -1,12 +1,13 @@
-/**
- * 
- */ 
+import java.util.ArrayList;
 
 public class Elevator {
 
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
+    private boolean[] pushedUp;
+    private boolean[] pushedDown;    
+    private boolean stopped;    
     
     /**
      * Author: Elijah Smith
@@ -16,6 +17,8 @@ public class Elevator {
         this.currentFloor = currentFloor;
         this.destinationFloor = destinationFloor;
         this.numberOfFloors = numberOfFloors;
+    pushedUp = new boolean[numberOfFloors];
+    pushedDown = new boolean[numberOfFloors];
     }
 
     /**
@@ -31,23 +34,46 @@ public class Elevator {
     * Issue #57/51 moveUp
     */
     public void moveUp(){
-        currentFloor++;        
+        int newCurrent = this.destinationFloor - this.currentFloor;
+        for(int i = 0; i < newCurrent; i++) {
+            this.currentFloor++;
+        }
+     }
+    
+    /**
+    * Author: Erik Burr
+    * Issue #17 pushUp/pushDown
+    */
+    public void pushUp(int currentFloor){
+        pushedUp[currentFloor + 1] = true;   
     }
-
+             
+    public void pushDown(int currentFloor){
+        pushedDown[currentFloor + 1] = true;  
+    }
+    
     /**
      * Author: Elijah Smith
      * Issue #22 getter method
      */ 
-    public int getCurrentFloor() {
+      public int getCurrentFloor() {
         return this.currentFloor;
-     }
-	    
-     public int getDestinationFloor() {
-	  return this.destinationFloor;
       }
-
+  
+      public int getDestinationFloor() {
+      return this.destinationFloor;
+      }
+      
       public int getNumberOfFloors() {
         return this.numberOfFloors;
+      }
+
+      public void stop() {
+        this.stopped = true;
+      }
+
+      public boolean getStopped() {
+        return this.stopped;
       }
 
       public void setCurrentFloor(int currentFloor) {
@@ -62,5 +88,3 @@ public class Elevator {
         this.numberOfFloors = numberOfFloors;
       }
 }
-
-
