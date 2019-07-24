@@ -5,9 +5,9 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
-    ArrayList<Passenger> pushedUp = new ArrayList<Passenger>();
-    ArrayList<Passenger> pushedDown = new ArrayList<Passenger>();
-    Passenger pass = new Passenger(currentFloor); 
+    boolean[] pushedUp;
+    boolean[] pushedDown;
+ 
 
     
     
@@ -18,7 +18,9 @@ public class Elevator {
     public Elevator(int currentFloor, int destinationFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
         this.destinationFloor = destinationFloor;
-        this.numberOfFloors = numberOfFloors;
+    	this.numberOfFloors = numberOfFloors;
+   	boolean[] pushedUp = new boolean[numberOfFloors];
+	boolean[] pushedDown = new boolean[numberOfFloors];
     }
 
     /**
@@ -47,16 +49,13 @@ public class Elevator {
     * Author: Erik Burr
     * Issue #17 pushUp/pushDown
     */
-    public void pushUp(){
-        pushedUp.add(pass);   
+    public void pushUp(int currentFloor){
+    	pushedUp[currentFloor] = true;   
     }
-	
-    /**
-    * Author: Erik Burr
-    * Issue #17 pushUp/pushDown
-    */           
-    public void pushDown(){
-        pushedDown.add(pass);
+	         
+    public void pushDown(int currentFloor){
+    	pushedDown[currentFloor] = true;  
+
     }
     
     /**
@@ -66,11 +65,8 @@ public class Elevator {
     public int getCurrentFloor() {
         return this.currentFloor;
      }
-        
-     /**
-      * Author: Erik Burr
-      * Issue #9 moveUp
-      */
+       
+
      public int getDestinationFloor() {
       return this.destinationFloor;
       }
@@ -80,7 +76,7 @@ public class Elevator {
       }
 
       public void setCurrentFloor(int currentFloor) {
-        this.currentFloor = currentFloor;
+       this.currentFloor = currentFloor;
       }
 
       public void setDestinationFloor(int destinationFloor) {
