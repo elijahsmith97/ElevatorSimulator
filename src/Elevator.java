@@ -42,7 +42,7 @@ public class Elevator {
      * Author: Elijah Smith
      * stop(): boolean method
      */
-    public boolean stop() {
+    public void stop() {
         this.stopped = true;
     }
     
