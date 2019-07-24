@@ -24,6 +24,7 @@ public class Elevator {
      */
     public void moveDown() {
         currentFloor--;
+        stop = false;
     }
     
    /**
@@ -31,7 +32,8 @@ public class Elevator {
     * Issue #57/51 moveUp
     */
     public void moveUp(){
-        currentFloor++;        
+        currentFloor++;
+        stop = false;        
     }
 
     /**
