@@ -7,7 +7,9 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
-    
+    private boolean[] pushedUp;
+    private boolean[] pushedDown;
+    private boolean stopped;
     /**
      * Author: Elijah Smith
      * Issue #18 Constructor
@@ -24,7 +26,7 @@ public class Elevator {
      */
     public void moveDown() {
         currentFloor--;
-        stop = false;
+        stopped = false;
     }
     
    /**
@@ -33,7 +35,7 @@ public class Elevator {
     */
     public void moveUp(){
         currentFloor++;
-        stop = false;        
+        stopped = false;        
     }
 
     /**
