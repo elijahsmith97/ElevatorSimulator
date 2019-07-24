@@ -6,9 +6,9 @@ public class Elevator {
     private int destinationFloor;
     private int numberOfFloors;
     private boolean[] pushedUp;
-    private boolean[] pushedDown;    
-    private boolean stopped;    
-    
+    private boolean[] pushedDown;
+    private boolean stopped;
+
     /**
      * Author: Elijah Smith
      * Issue #18 Constructor
@@ -27,18 +27,17 @@ public class Elevator {
      */
     public void moveDown() {
         currentFloor--;
+        stopped = false;
     }
     
    /**
     * Author: Elijah Smith
     * Issue #57/51 moveUp
     */
-    public void moveUp(){
-        int newCurrent = this.destinationFloor - this.currentFloor;
-        for(int i = 0; i < newCurrent; i++) {
-            this.currentFloor++;
-        }
-     }
+    public void moveUp() {
+        currentFloor++;
+        stopped = false;        
+    }
     
     /**
     * Author: Erik Burr
