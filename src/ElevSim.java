@@ -9,9 +9,8 @@ public class ElevSim {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int elevCurrent = 1;
-        System.out.print("Which floor are you currently on? ");
-        int passCurrent = kb.nextInt();
         int passDestination = 1;
+        int passCurrent = 1;
         char decision = 'u';
         int floorDecision = 1;
         String stringDecision = "";
@@ -20,42 +19,51 @@ public class ElevSim {
         //Elevator elev = new Elevator(maxFloors);
         //Controller control = new Controller(elev);
         //PassengerManager passManager = new PassengerManager(//numberOfFloors?);
-
+        System.out.println("Entering elevator simulation... Type \"s\" to exit at anytime.");
+        
         while(Character.toLowerCase(decision) != 's') {
-            System.out.print("Which direction would you like to go? "/* + elev.setCurrentFloor()*/);
-            decision = kb.next().charAt(0);
+            System.out.print("Which floor are you currently on? ");
+            passCurrent = kb.nextInt();
+
+            //base cases for maxFloor level and lowest floor level(1)
+            if(passCurrent == 1)
+                decision = 'u';
+            else if(passCurrent == maxFloors)
+                decision = 'd';
+            else {
+                System.out.print("Which direction would you like to go? "/* + elev.setCurrentFloor()*/);
+                decision = kb.next().charAt(0);
+            }
+            
             switch(Character.toLowerCase(decision)) {
+                //elevator going Up case
                 case 'u':
                     System.out.print("Waiting on Elevator to go Up...\n");
                     //elev.pushUp();
+                    System.out.print("To which floor would you like to go up to? ");
+                    floorDecision = kb.nextInt();
+                    if(floorDecision > maxFloors || floorDecision <=  passCurrent)
+                        decision = 's';
+                    //elev.moveUp(elevCurrent, passDestination);
                     break;
+
+                //elevator going Down case
                 case 'd':
-                    System.out.print("Waiting on elevator to go Down...\n");
-                    //elev.pushDown();
-                    break;
+                     System.out.print("Waiting on elevator to go Down...\n");
+                     //elev.pushDown();
+                     System.out.print("To which floor would you like to go down to? ");
+                     floorDecision = kb.nextInt();
+                     if(floorDecision > maxFloors || floorDecision >= passCurrent)
+                        decision = 's';
+                     //elev.moveDown(elevCurrent, passDestination);
+                     break;
+                
                 default:
-                    decision = 's';
-                    System.out.print("Exiting simulation...\n");
-                    break;
+                     decision = 's';
+                     System.out.print("Exiting simulation...\n");
+                     break;
             }
-            
-            if(decision == 'u') {
-                System.out.print("To which floor would you like to go up to? ");
-                floorDecision = kb.nextInt();
-                if(floorDecision > maxFloors || floorDecision < passCurrent)
-                    decision = 's';
-                //elev.moveUp(elevCurrent, passDestination);
-            }
-            if(decision == 'd') {
-                System.out.print("To which floor would you like to go down to? ");
-                floorDecision = kb.nextInt();
-                if(floorDecision > maxFloors || floorDecision < passCurrent)
-                    decision = 's';
-                //elev.moveDown(elevCurrent, passDestination);
-            }
-            
-
-
+           
             /* cycle for next passenger
             passManager.next();
             control.next();
@@ -65,6 +73,7 @@ public class ElevSim {
             /*if(display.getStatus() == 's')
                 decision = "s";
             */
+
             char decision2 = 'y';
             while(Character.toLowerCase(decision2) != 'n' && decision != 's') {
                 System.out.print("Are there new passengers? ");
@@ -86,6 +95,18 @@ public class ElevSim {
                         decision2 = 'n';
                         break;
                 }  
+            }
+           
+            switch(decision) {
+                case 'u':
+                    System.out.print("Going up to floor " + floorDecision + "\n");
+                    break;
+                case 'd':
+                    System.out.print("Going down to floor " + floorDecision + "\n");   
+                default:
+                    decision = 's';
+                    System.out.print("Exiting simulation...\n");
+                    break;
             }
         }
     }
