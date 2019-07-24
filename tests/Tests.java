@@ -26,6 +26,30 @@ public class Tests
         int newCurrent = elev.getCurrentFloor();
         assertEquals(1, newCurrent);
    }
+   
+      /**
+    * Author: Erik Burr
+    *
+    */
+   @Test
+   public void testPushUp() {
+        Elevator elev = new Elevator(1, 5, 5);   
+        int newCurrent = elev.getCurrentFloor();
+        elev.pushUp(newCurrent);
+        assertEquals(1, newCurrent);   
+   }
+
+   /**
+    * Author: Erik Burr
+    *
+    */
+   @Test
+   public void testPushDown() {
+        Elevator elev = new Elevator(1, 5, 5);   
+        int newCurrent = elev.getCurrentFloor();
+        elev.pushDown(newCurrent);
+        assertEquals(1, newCurrent);  
+   }  
 
    
    /**
