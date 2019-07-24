@@ -24,7 +24,7 @@ public class Passenger
    {
        if(!this.waiting)
        {
-           if(this.destinationFloor > elev.getCurrentFloor)
+           if(this.destinationFloor > elev.getCurrentFloor())
            {
                elev.pushUp(this.startFloor);
            }
