@@ -15,6 +15,8 @@ public class Elevator {
      */ 
     public Elevator(int numberOfFloors) {
         this.currentFloor = 1;
+        this.numberOfFloors = numberOfFloors;
+        this.destinationFloor = new ArrayList<>();
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
     }
@@ -22,9 +24,9 @@ public class Elevator {
      * Author: Elijah Smith
      * Issue #18 Constructor
      */ 
-    public Elevator(int currentFloor, int destinationFloor, int numberOfFloors) {
+    public Elevator(int currentFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
-        this.destinationFloor = destinationFloor;
+        this.destinationFloor = new ArrayList<Integer>();
         this.numberOfFloors = numberOfFloors;
         pushedUp = new boolean[numberOfFloors];
         pushedDown = new boolean[numberOfFloors];

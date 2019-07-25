@@ -80,10 +80,9 @@ public class Tests
      */ 
     @Test
     public void testElevatorConstructor2() {
-        Elevator elev = new Elevator(2, 99, 100);
+        Elevator elev = new Elevator(2, 100);
 
         assertEquals(2, elev.getCurrentFloor());
-        assertEquals(99, elev.getDestinationFloor());
         assertEquals(100, elev.getNumberOfFloors());
     }
 
