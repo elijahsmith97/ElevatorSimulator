@@ -11,14 +11,23 @@ public class Elevator {
 
     /**
      * Author: Elijah Smith
+     * Issue #61 new Constructor
+     */ 
+    public Elevator(int numberOfFloors) {
+        this.currentFloor = 1;
+        pushedUp = new boolean[numberOfFloors];
+        pushedDown = new boolean[numberOfFloors];
+    }
+    /**
+     * Author: Elijah Smith
      * Issue #18 Constructor
      */ 
     public Elevator(int currentFloor, int destinationFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
         this.destinationFloor = destinationFloor;
         this.numberOfFloors = numberOfFloors;
-    pushedUp = new boolean[numberOfFloors];
-    pushedDown = new boolean[numberOfFloors];
+        pushedUp = new boolean[numberOfFloors];
+        pushedDown = new boolean[numberOfFloors];
     }
 
     /**

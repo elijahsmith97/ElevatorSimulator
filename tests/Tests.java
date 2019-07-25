@@ -64,6 +64,29 @@ public class Tests
         Elevator elevator = new Elevator(currentFloor, destinationFloor, totalFloors);
    }
 
+    /**
+    * Author: Elijah Smith
+    */ 
+    @Test
+    public void testElevatorConstructor1() {
+        Elevator elev = new Elevator(100);
+
+        assertEquals(1, elev.getCurrentFloor());
+        assertEquals(100, elev.getNumberOfFloors());
+    }
+
+    /**
+     * Author: Elijah Smith
+     */ 
+    @Test
+    public void testElevatorConstructor2() {
+        Elevator elev = new Elevator(2, 99, 100);
+
+        assertEquals(2, elev.getCurrentFloor());
+        assertEquals(99, elev.getDestinationFloor());
+        assertEquals(100, elev.getNumberOfFloors());
+    }
+
    @Test
    public void testPassengerConstructor1()
    {
