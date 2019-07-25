@@ -4,7 +4,7 @@
  * Issue #2
  */
 import java.util.Scanner; 
-
+   
 public class ElevSim {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
