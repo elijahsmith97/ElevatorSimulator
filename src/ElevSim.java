@@ -48,29 +48,6 @@ public class ElevSim {
                     break;
             }
             
-            /* cycle for next passenger
-            passManager.next();
-            control.next();
-            status.display();
-            */
-
-        while(Character.toLowerCase(decision) != 's') {
-            System.out.print("Which direction would you like to go? "/* + elev.setCurrentFloor()*/);
-            decision = kb.next().charAt(0);
-            switch(Character.toLowerCase(decision)) {
-                case 'u':
-                    System.out.println("Going up...");
-                    //elev.pushUp();
-                    break;
-                case 'd':
-                    System.out.println("Going down...");
-                    //elev.pushDown();
-                    break;
-                default:
-                    decision = 's';
-                    System.out.println("Exiting simulation...");
-                    break;
-            }
             
             /* cycle for next passenger
             passManager.next();
