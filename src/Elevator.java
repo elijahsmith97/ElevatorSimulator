@@ -77,19 +77,6 @@ public class Elevator {
              
     public void pushDown(int currentFloor){
         pushedDown[currentFloor] = true;  
-        stopped = false;        
-    }
-    
-    /**
-    * Author: Erik Burr
-    * Issue #17 pushUp/pushDown
-    */
-    public void pushUp(int currentFloor){
-        pushedUp[currentFloor] = true;   
-    }
-             
-    public void pushDown(int currentFloor){
-        pushedDown[currentFloor] = true;  
     }
 
     public boolean pushTrue()
