@@ -1,5 +1,5 @@
 import java.util.Scanner; 
-   
+
 public class ElevSim {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
@@ -18,6 +18,7 @@ public class ElevSim {
             switch(Character.toLowerCase(decision)) {
                 case 'u':
                     try {
+
                         System.out.println("Going up...");
                         Thread.sleep(3000);
                         System.out.println(current);

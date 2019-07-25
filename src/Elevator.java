@@ -39,7 +39,6 @@ public class Elevator {
     public void moveDown() {
         currentFloor--;
         stopped = false;
-
         try {
             Thread.sleep(3000);
             System.out.println("Elevator going down...");
@@ -86,7 +85,6 @@ public class Elevator {
             if(pushedUp[loop] || pushedDown[loop])
                return true;
         }
-
         return false;
     }
     
