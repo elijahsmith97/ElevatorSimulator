@@ -59,6 +59,17 @@ public class Elevator {
     public void pushDown(int currentFloor){
         pushedDown[currentFloor] = true;  
     }
+
+    public boolean pushTrue()
+    {
+        for(int loop = 0; loop < pushedUp.length; loop++)
+        {
+            if(pushedUp[loop] || pushedDown[loop])
+               return true;
+        }
+
+        return false;
+    }
     
     /**
      * Author: Elijah Smith
