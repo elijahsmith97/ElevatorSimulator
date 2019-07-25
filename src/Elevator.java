@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Elevator {
 
@@ -36,6 +37,7 @@ public class Elevator {
      */
     public void moveDown() {
         currentFloor--;
+        TimeUnit.SECONDS.sleep(3)
         stopped = false;
     }
     
@@ -45,6 +47,7 @@ public class Elevator {
     */
     public void moveUp() {
         currentFloor++;
+        TimeUnit.SECONDS.sleep(3)
         stopped = false;        
     }
     
