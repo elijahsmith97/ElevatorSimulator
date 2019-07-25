@@ -34,11 +34,19 @@ public class Elevator {
     /**
      * Author: Elijah Smith
      * Issue #57/51 moveDown()
+     * @throws Exception 
      */
     public void moveDown() {
         currentFloor--;
-        TimeUnit.SECONDS.sleep(3)
         stopped = false;
+        try {
+            Thread.sleep(3000);
+            System.out.println("Elevator going down...");
+        } 
+        
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     
    /**
@@ -47,8 +55,15 @@ public class Elevator {
     */
     public void moveUp() {
         currentFloor++;
-        TimeUnit.SECONDS.sleep(3)
-        stopped = false;        
+        stopped = false;
+        try {
+            Thread.sleep(3000);
+            System.out.println("Elevator going up...");
+        } 
+        
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     
     /**
