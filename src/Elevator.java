@@ -1,5 +1,6 @@
 import java.util.ArrayList;
- 
+import java.util.concurrent.TimeUnit;
+
 public class Elevator {
 
     private int currentFloor;
@@ -33,10 +34,19 @@ public class Elevator {
     /**
      * Author: Elijah Smith
      * Issue #57/51 moveDown()
+     * @throws Exception 
      */
     public void moveDown() {
         currentFloor--;
         stopped = false;
+        try {
+            Thread.sleep(3000);
+            System.out.println("Elevator going down...");
+        } 
+        
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     
    /**
@@ -45,7 +55,15 @@ public class Elevator {
     */
     public void moveUp() {
         currentFloor++;
-        stopped = false;        
+        stopped = false;
+        try {
+            Thread.sleep(3000);
+            System.out.println("Elevator going up...");
+        } 
+        
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     
     /**
@@ -67,7 +85,6 @@ public class Elevator {
             if(pushedUp[loop] || pushedDown[loop])
                return true;
         }
-
         return false;
     }
     
