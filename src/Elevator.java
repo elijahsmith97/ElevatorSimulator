@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Elevator {
 
     private int currentFloor;
-    private int destinationFloor;
+    private ArrayList<int> destinationFloor;
     private int numberOfFloors;
     private boolean[] pushedUp;
     private boolean[] pushedDown;
@@ -78,9 +78,13 @@ public class Elevator {
       public int getCurrentFloor() {
         return this.currentFloor;
       }
+
+      public void addDestinationFloor(int df) {
+        destinationFloor.add(df);
+      }
   
-      public int getDestinationFloor() {
-      return this.destinationFloor;
+      public ArrayList<int> getDestinationFloor() {
+        return this.destinationFloor;
       }
       
       public int getNumberOfFloors() {
@@ -99,9 +103,6 @@ public class Elevator {
         this.currentFloor = currentFloor;
       }
 
-      public void setDestinationFloor(int destinationFloor) {
-        this.destinationFloor = destinationFloor;
-      }
 
       public void setNumberOfFloors(int numberOfFloors) {
         this.numberOfFloors = numberOfFloors;
