@@ -18,7 +18,7 @@ public class Display
     public void start()
     {
         System.out.println("Starting simulation...");
-        System.out.println("Press \"s\" to exit at any time);
+        System.out.println("Press \"s\" to exit at any time");
     }
     
     public void goingUp()
