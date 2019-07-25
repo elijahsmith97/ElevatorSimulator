@@ -88,6 +88,24 @@ public class Tests
     }
 
    @Test
+   public void testPushTrue1()
+   {
+      Elevator elev = new Elevator(1, 5, 10);
+
+      assertEquals(false, elev.pushTrue());
+   }
+
+   @Test 
+   public void testPushTrue2()
+   {
+      Elevator elev = new Elevator(1, 5, 10);
+      elev.pushUp(4);
+
+      assertEquals(true, elev.pushTrue());
+
+   }
+
+   @Test
    public void testPassengerConstructor1()
    {
       Passenger pass = new Passenger(3, 10);
