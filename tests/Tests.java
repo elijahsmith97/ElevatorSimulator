@@ -59,9 +59,8 @@ public class Tests
    @Test
    public void testCurrentFloor() {
         int currentFloor = 60;
-        int destinationFloor = 420;
         int totalFloors = 600;
-        Elevator elevator = new Elevator(currentFloor, destinationFloor, totalFloors);
+        Elevator elevator = new Elevator(currentFloor, totalFloors);
    }
 
     /**
