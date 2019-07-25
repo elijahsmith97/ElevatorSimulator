@@ -1,5 +1,5 @@
 import java.util.Scanner; 
-
+   
 public class ElevSim {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
@@ -7,6 +7,7 @@ public class ElevSim {
         int passCurrent = 1;
         char decision = 'u';
         int maxFloors = 100;
+      
         Elevator elev = new Elevator(maxFloors);
         int current = elev.getCurrentFloor();
         //Controller control = new Controller(elev);
@@ -53,6 +54,29 @@ public class ElevSim {
             status.display();
             */
 
+        while(Character.toLowerCase(decision) != 's') {
+            System.out.print("Which direction would you like to go? "/* + elev.setCurrentFloor()*/);
+            decision = kb.next().charAt(0);
+            switch(Character.toLowerCase(decision)) {
+                case 'u':
+                    System.out.println("Going up...");
+                    //elev.pushUp();
+                    break;
+                case 'd':
+                    System.out.println("Going down...");
+                    //elev.pushDown();
+                    break;
+                default:
+                    decision = 's';
+                    System.out.println("Exiting simulation...");
+                    break;
+            }
+            
+            /* cycle for next passenger
+            passManager.next();
+            control.next();
+            status.display();
+            */
             /*if(display.getStatus() == 's')
                 decision = "s";
             */
