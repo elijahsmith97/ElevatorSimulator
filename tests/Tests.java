@@ -95,7 +95,8 @@ public class Tests
       assertEquals(false, elev.pushTrue());
    }
 
-   @Test void testPushTrue2()
+   @Test 
+   public void testPushTrue2()
    {
       Elevator elev = new Elevator(1, 5, 10);
       elev.pushUp(4);
