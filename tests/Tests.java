@@ -84,7 +84,9 @@ public class Tests
         assertEquals(2, elev.getCurrentFloor());
         assertEquals(100, elev.getNumberOfFloors());
     }
-
+    /**
+     *this is a comment
+      */
    @Test
    public void testPushTrue1()
    {
