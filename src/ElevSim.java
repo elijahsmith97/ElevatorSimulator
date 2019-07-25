@@ -19,6 +19,7 @@ public class ElevSim {
         //Elevator elev = new Elevator(maxFloors);
         //Controller control = new Controller(elev);
         //PassengerManager passManager = new PassengerManager(//numberOfFloors?);
+        //
         System.out.println("Entering elevator simulation... Type \"s\" to exit at anytime.");
         
         while(Character.toLowerCase(decision) != 's') {
@@ -44,7 +45,7 @@ public class ElevSim {
                     floorDecision = kb.nextInt();
                     if(floorDecision > maxFloors || floorDecision <=  passCurrent)
                         decision = 's';
-                    //elev.moveUp(elevCurrent, passDestination);
+                    //elev.setDestinationFloor(floorDecision);
                     break;
 
                 //elevator going Down case
@@ -55,7 +56,7 @@ public class ElevSim {
                      floorDecision = kb.nextInt();
                      if(floorDecision > maxFloors || floorDecision >= passCurrent)
                         decision = 's';
-                     //elev.moveDown(elevCurrent, passDestination);
+                     //elev.setDestinationFloor(floorDecision);
                      break;
                 
                 default:
