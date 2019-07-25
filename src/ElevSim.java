@@ -18,7 +18,7 @@ public class ElevSim {
         
         Elevator elev = new Elevator(maxFloors);
         //Controller control = new Controller(elev);
-        //PassengerManager passManager = new PassengerManager(//numberOfFloors?);
+        PassengerManager passManager = new PassengerManager(maxFloors);
         //
         System.out.println("Entering elevator simulation... Type \"s\" to exit at anytime.");
         
