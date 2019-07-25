@@ -9,7 +9,7 @@ public class Tests
     */
    @Test
    public void testMoveDown() {
-        Elevator elevator = new Elevator(5, 4, 5);
+        Elevator elevator = new Elevator(5, 5);
         elevator.moveDown();
         int newCurrent = elevator.getCurrentFloor();
         assertEquals(4, newCurrent);      
@@ -21,7 +21,7 @@ public class Tests
     */
    @Test
    public void testMoveUp() {
-        Elevator elev = new Elevator(1, 2, 5);
+        Elevator elev = new Elevator(1, 5);
         elev.moveUp();
         int newCurrent = elev.getCurrentFloor();
         assertEquals(2, newCurrent);
@@ -33,7 +33,7 @@ public class Tests
     */
    @Test
    public void testPushUp() {
-        Elevator elev = new Elevator(1, 5, 5);   
+        Elevator elev = new Elevator(1, 5);   
         int newCurrent = elev.getCurrentFloor();
         elev.pushUp(newCurrent);
         assertEquals(1, newCurrent);   
@@ -45,7 +45,7 @@ public class Tests
     */
    @Test
    public void testPushDown() {
-        Elevator elev = new Elevator(1, 5, 5);   
+        Elevator elev = new Elevator(1, 5);   
         int newCurrent = elev.getCurrentFloor();
         elev.pushDown(newCurrent);
         assertEquals(1, newCurrent);  
@@ -89,7 +89,7 @@ public class Tests
    @Test
    public void testPushTrue1()
    {
-      Elevator elev = new Elevator(1, 5, 10);
+      Elevator elev = new Elevator(1, 10);
 
       assertEquals(false, elev.pushTrue());
    }
@@ -97,7 +97,7 @@ public class Tests
    @Test 
    public void testPushTrue2()
    {
-      Elevator elev = new Elevator(1, 5, 10);
+      Elevator elev = new Elevator(1, 10);
       elev.pushUp(4);
 
       assertEquals(true, elev.pushTrue());
