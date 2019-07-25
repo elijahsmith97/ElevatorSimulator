@@ -1,10 +1,5 @@
-/**
- * Author: Elijah Smith
- * version: Mon Jul 15, 2019
- * Issue #2
- */
 import java.util.Scanner; 
-   
+
 public class ElevSim {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
@@ -20,13 +15,27 @@ public class ElevSim {
             decision = kb.next().charAt(0);
             switch(Character.toLowerCase(decision)) {
                 case 'u':
-                    System.out.println("Going up...");
-                    //elev.pushUp();
+                    try {
+                        Thread.sleep(3000);
+                        System.out.println("Going up...");
+                    } 
+                    
+                    catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     break;
+                
                 case 'd':
-                    System.out.println("Going down...");
-                    //elev.pushDown();
+                    try {
+                        Thread.sleep(3000);
+                        System.out.println("Going down...");
+                    } 
+                    
+                    catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }    
                     break;
+                
                 default:
                     decision = 's';
                     System.out.println("Exiting simulation...");
