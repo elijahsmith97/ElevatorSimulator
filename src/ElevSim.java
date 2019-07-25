@@ -1,17 +1,84 @@
-/**
- * Author: Elijah Smith
- * version: Mon Jul 15, 2019
- * Issue #2
- */
 import java.util.Scanner; 
 
 public class ElevSim {
     public static void main(String[] args) {
-         Scanner kb = new Scanner(System.in);
-         System.out.println("Enter the desired floor: ");
-         int df = kb.nextInt(); //df is desired floor
+        Scanner kb = new Scanner(System.in);
+        int elevCurrent = 1;
+        int passCurrent = 1;
+        char decision = 'u';
+        int maxFloors = 100;
+        Elevator elev = new Elevator(maxFloors);
+        int current = elev.getCurrentFloor();
+        //Controller control = new Controller(elev);
 
-         //hard coded 5 as the numberOfFloor parameter because Im not quite sure how to handle that now
-         Elevator elevator = new Elevator(1, df, 5);
+        while(Character.toLowerCase(decision) != 's') {
+            System.out.print("Which direction would you like to go? "/* + elev.setCurrentFloor()*/);
+            decision = kb.next().charAt(0);
+            switch(Character.toLowerCase(decision)) {
+                case 'u':
+                    try {
+                        System.out.println("Going up...");
+                        Thread.sleep(3000);
+                        System.out.println(current);
+                        current++;
+                    } 
+                    
+                    catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                
+                case 'd':
+                    try {
+                        System.out.println("Going down...");
+                        Thread.sleep(3000);
+                        System.out.println(current);
+                        current++;
+                    } 
+                    
+                    catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }    
+                    break;
+                
+                default:
+                    decision = 's';
+                    System.out.println("Exiting simulation...");
+                    break;
+            }
+            
+            /* cycle for next passenger
+            passManager.next();
+            control.next();
+            status.display();
+            */
+
+            /*if(display.getStatus() == 's')
+                decision = "s";
+            */
+            char decision2 = 'y';
+            while(Character.toLowerCase(decision2) != 'n' && decision != 's') {
+                System.out.print("Are there new passengers? ");
+                decision2 = kb.next().charAt(0);
+                switch(Character.toLowerCase(decision2)) {
+                    case 'y':
+                        //passManager.newPassenger(//whatever this entails);
+                        System.out.print("New passenger added to list!\n");
+                        break;
+                    case 'n':
+                        decision2 = 'n';
+                        System.out.print("There are no new passengers, continuing simulation...\n"); 
+                        break;
+                    case 's':
+                        decision = 's';
+                        System.out.print("Exiting simulation...\n");
+                        break;
+                    default:
+                        decision2 = 'n';
+                        break;
+                }
+                
+            }
+        }
     }
 }
