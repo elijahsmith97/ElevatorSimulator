@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+ 
 public class Elevator {
 
     private int currentFloor;
@@ -15,8 +15,8 @@ public class Elevator {
      */ 
     public Elevator(int numberOfFloors) {
         this.currentFloor = 1;
-        pushedUp = new boolean[numberOfFloors + 1];
-        pushedDown = new boolean[numberOfFloors + 1];
+        pushedUp = new boolean[numberOfFloors+1];
+        pushedDown = new boolean[numberOfFloors+1];
     }
     /**
      * Author: Elijah Smith
