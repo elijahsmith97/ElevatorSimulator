@@ -16,7 +16,7 @@ public class ElevSim {
         String stringDecision = "";
         int maxFloors = 100;
         
-        //Elevator elev = new Elevator(maxFloors);
+        Elevator elev = new Elevator(maxFloors);
         //Controller control = new Controller(elev);
         //PassengerManager passManager = new PassengerManager(//numberOfFloors?);
         //
@@ -32,7 +32,7 @@ public class ElevSim {
             else if(passCurrent == maxFloors)
                 decision = 'd';
             else {
-                System.out.print("Which direction would you like to go? "/* + elev.setCurrentFloor()*/);
+                System.out.print("Which direction would you like to go? ");
                 decision = kb.next().charAt(0);
             }
             
@@ -40,23 +40,23 @@ public class ElevSim {
                 //elevator going Up case
                 case 'u':
                     System.out.print("Waiting on Elevator to go Up...\n");
-                    //elev.pushUp();
+                    elev.pushUp();
                     System.out.print("To which floor would you like to go up to? ");
                     floorDecision = kb.nextInt();
                     if(floorDecision > maxFloors || floorDecision <=  passCurrent)
                         decision = 's';
-                    //elev.setDestinationFloor(floorDecision);
+                    //elev.addDestinationFloor(floorDecision);
                     break;
 
                 //elevator going Down case
                 case 'd':
                      System.out.print("Waiting on elevator to go Down...\n");
-                     //elev.pushDown();
+                     elev.pushDown();
                      System.out.print("To which floor would you like to go down to? ");
                      floorDecision = kb.nextInt();
                      if(floorDecision > maxFloors || floorDecision >= passCurrent)
                         decision = 's';
-                     //elev.setDestinationFloor(floorDecision);
+                     //elev.addDestinationFloor(floorDecision);
                      break;
                 
                 default:
