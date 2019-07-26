@@ -94,6 +94,14 @@ public class Elevator {
      * Author: Elijah Smith
      * Issue #22 getter method
      */ 
+      public boolean[] getPushedUp() {
+        return this.pushedUp();
+      }
+
+      public boolean[] getPushedDown() {
+        return this.pushedDown();
+      }
+     
       public int getCurrentFloor() {
         return this.currentFloor;
       }
