@@ -95,11 +95,11 @@ public class Elevator {
      * Issue #22 getter method
      */ 
       public boolean[] getPushedUp() {
-        return this.pushedUp();
+        return this.pushedUp;
       }
 
       public boolean[] getPushedDown() {
-        return this.pushedDown();
+        return this.pushedDown;
       }
      
       public int getCurrentFloor() {
