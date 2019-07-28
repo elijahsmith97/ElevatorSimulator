@@ -59,10 +59,9 @@ public class Tests
    @Test
    public void testCurrentFloor() {
         int currentFloor = 60;
-        int destinationFloor = 420;
         int totalFloors = 600;
         Elevator elevator = new Elevator(currentFloor, totalFloors);
-        
+
         assertEquals(60, elevator.getCurrentFloor());
    }
 
@@ -82,10 +81,11 @@ public class Tests
         Elevator elev = new Elevator(2, 100);
 
         assertEquals(2, elev.getCurrentFloor());
-        assertEquals(99, elev.getDestinationFloor());
         assertEquals(100, elev.getNumberOfFloors());
     }
-
+    /**
+     *this is a comment
+      */
    @Test
    public void testPushTrue1()
    {

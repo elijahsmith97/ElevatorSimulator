@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class Elevator {
 
     private int currentFloor;
-    private int destinationFloor;
+    private ArrayList<Integer> destinationFloor;
     private int numberOfFloors;
     private boolean[] pushedUp;
     private boolean[] pushedDown;
@@ -16,6 +16,8 @@ public class Elevator {
      */ 
     public Elevator(int numberOfFloors) {
         this.currentFloor = 1;
+        this.numberOfFloors = numberOfFloors;
+        this.destinationFloor = new ArrayList<>();
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
     }
@@ -23,9 +25,9 @@ public class Elevator {
      * Author: Elijah Smith
      * Issue #18 Constructor
      */ 
-    public Elevator(int currentFloor, int destinationFloor, int numberOfFloors) {
+    public Elevator(int currentFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
-        this.destinationFloor = destinationFloor;
+        this.destinationFloor = new ArrayList<Integer>();
         this.numberOfFloors = numberOfFloors;
         pushedUp = new boolean[numberOfFloors];
         pushedDown = new boolean[numberOfFloors];
@@ -92,12 +94,24 @@ public class Elevator {
      * Author: Elijah Smith
      * Issue #22 getter method
      */ 
+      public boolean[] getPushedUp() {
+        return this.pushedUp;
+      }
+
+      public boolean[] getPushedDown() {
+        return this.pushedDown;
+      }
+     
       public int getCurrentFloor() {
         return this.currentFloor;
       }
+
+      public void addDestinationFloor(int df) {
+        destinationFloor.add(df);
+      }
   
-      public int getDestinationFloor() {
-      return this.destinationFloor;
+      public ArrayList<Integer> getDestinationFloor() {
+        return this.destinationFloor;
       }
       
       public int getNumberOfFloors() {
@@ -131,9 +145,6 @@ public class Elevator {
         this.currentFloor = currentFloor;
       }
 
-      public void setDestinationFloor(int destinationFloor) {
-        this.destinationFloor = destinationFloor;
-      }
 
       public void setNumberOfFloors(int numberOfFloors) {
         this.numberOfFloors = numberOfFloors;
