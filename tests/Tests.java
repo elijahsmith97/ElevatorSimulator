@@ -61,11 +61,10 @@ public class Tests
         int currentFloor = 60;
         int totalFloors = 600;
         Elevator elevator = new Elevator(currentFloor, totalFloors);
+
+        assertEquals(60, elevator.getCurrentFloor());
    }
 
-    /**
-    * Author: Elijah Smith
-    */ 
     @Test
     public void testElevatorConstructor1() {
         Elevator elev = new Elevator(100);
@@ -106,20 +105,44 @@ public class Tests
    }
 
    @Test
+   public void testPassengerNext1()
+   {
+      Elevator elev = new Elevator(1, 10);
+      Passenger pass = new Passenger(elev, 7);
+
+      pass.next();
+
+      assertEquals(true, elev.pushTrue());      
+   }
+
+    public void testGetPushedUpArray() {
+        Elevator elev = new Elevator(100);
+        elev.pushUp(3);
+        elev.pushDown(4);
+        
+        boolean[] goingUp = elev.getPushedUpArray();
+        boolean[] goingDown = elev.getPushedDownArray();
+
+        boolean up = goingUp[3];
+        boolean down = goingDown[4];
+    
+        assertEquals(true, up);
+        assertEquals(true, down);
+    }
+   
+   /**
+    * Author: Elijah Smith
+      
+    */  
+   @Test
    public void testPassengerConstructor1()
    {
-      Passenger pass = new Passenger(3, 10);
- 
-      assertEquals(3, pass.getStartFloor());
-      assertEquals(10, pass.getDestinationFloor());
+        
    }
 
    @Test
    public void testPassengerConstructor2()
    {
-      Passenger pass = new Passenger(50);
 
-      assertEquals(1, pass.getStartFloor());
-      assertEquals(50, pass.getDestinationFloor());
    }
 }
