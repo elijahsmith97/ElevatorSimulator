@@ -18,9 +18,9 @@ public class DefaultController extends Controller
       int maxFloor = elevator.getNumberOfFloors();
       int currentFloor = elevator.getCurrentFloor();
 
-      ArrayList<int> destFloors = elevator.//getDestFloors
-      boolean pushUpFloors[] = elevator.//getPushUpFloors
-      boolean pushDownFloors[] = elevator.//getPushDownFloors
+      ArrayList<Integer> destFloors = elevator.getDestinationFloor();
+      boolean pushUpFloors[] = elevator.getPushedUp();
+      boolean pushDownFloors[] = elevator.getPushedDown();
       boolean pushTrue = elevator.pushTrue();
 
 
