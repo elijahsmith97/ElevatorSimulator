@@ -1,58 +1,44 @@
 /*
- *
- *Author Jake Wooten
- * Iusse #7
- * */
+*
+* Author: Matthew Frankel
+* Issue 56
+* */
 
-public class Display {
+public class Display 
+{
+   Elevator el;
+   PassengerManager pm;
 
-Elevator elevator;
-Passenger passenger;
-
-    public Display(Passenger passenger, Elevator elevator) {
-       
-        this.passenger = passenger;
-        this.elevator = elevator;
-    }
-    /*
-     *Displays floor passenger is currently on
-     */
-
-    public void display_currentP () {
-
-        
-        System.out.println("Passenger is on floor " + passenger.getStartFloor());
-    }
+   public Display(PassengerManager pm, Elevator el) 
+   {   
+       this.pm = pm;
+       this.el = el;
+   }
+   
+   public void start()
+   {
+       System.out.println("Starting simulation...");
+       System.out.println("Press \"s\" to exit at any time");
+   }
+   
+   public void goingUp()
+   {
+       System.out.println("Elevator going up...");
+       el.getCurrentFloor();
+   }
+   
+   public void goingDown()
+   {
+       System.out.println("Elevator going down...");                   
+   }
     
-    /*
-     *Displays the floor the passenger has selected
-     */
-
-    public void display_selectP () {
-
-        System.out.println("Passenger has selected floor " + passenger.getDestinationFloor());
-    }
-    
-    /*
-     *Displays the floor the passenger has arrived at
-     */
-    public void display_destP () {
-        System.out.println("Passenger has arrived at floor " + passenger.getDestinationFloor());
-    }
-    
-    /*
-     *Displays the floor the elevator leaves from
-     */
-    public void display_currentE () {
-       
-        System.out.println("Elevator doors close\nElevator leaves from floor " + elevator.getCurrentFloor());
-    }
-
-    /*
-     *Displays the floor the elevator has arrived at
-     */
-    public void display_destE () {
-    
-        System.out.println("Elevator doors open\nElevator arrives at floor " + elevator.getDestinationFloor());
-    }
+   public void exit()
+   {
+       System.out.println("Exiting simulation...");                   
+   }
+                          
+   public void displayCurrentFloor()
+   {
+       System.out.println("Elevator is currently on floor " + el.getCurrentFloor());
+   }
 }
