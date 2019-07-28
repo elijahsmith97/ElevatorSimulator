@@ -147,7 +147,7 @@ public class Tests implements TimerClient
             {
                 try
                 {
-               r    Thread.sleep((int)pollDelay);
+                   Thread.sleep((int)pollDelay);
                     
                 }
                 catch(Exception e)
