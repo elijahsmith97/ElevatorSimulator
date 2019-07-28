@@ -69,7 +69,7 @@ public class ElevSim implements TimerClient {
                 decision2 = kb.next().charAt(0);
                 switch(Character.toLowerCase(decision2)) {
                     case 'y':
-                        passanger++;
+                        passenger++;
                         //passManager.newPassenger(//whatever this entails);
                         System.out.println("\nNew passenger added to list!");
                         break;
@@ -83,8 +83,8 @@ public class ElevSim implements TimerClient {
                         int departing;
                         System.out.println("Enter number of passengers leaving:");
                         departing = kb.nextInt();
-                        passanger = passanger - departing;
-                        System.out.println(departing + " passenger(s) have left, " + passanger + " passengers remain."); 
+                        passenger -= departing;
+                        System.out.println(departing + " passenger(s) have left, " + passenger + " passengers remain."); 
                         break;
                         
                     case 's':
