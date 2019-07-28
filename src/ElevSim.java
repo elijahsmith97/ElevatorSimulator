@@ -14,7 +14,7 @@ public class ElevSim implements TimerClient {
      * needed for Timer/TimerClient
      */ 
     boolean timerExpired = false;
-    interface void timerCallback() {
+    public  void timerCallback() {
         timerExpired = true;
     }
    
