@@ -7,7 +7,7 @@ interface TimerClient {
     public void timerCallback();
 }
 
-public class ElevSim {
+public class ElevSim implements TimerClient {
     public static void main(String[] args) throws InterruptedException {
         Scanner kb = new Scanner(System.in);
         int elevCurrent = 1;

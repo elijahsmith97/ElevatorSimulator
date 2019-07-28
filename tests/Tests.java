@@ -2,11 +2,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 //brought in from TimerTest.java
-interface TimerClient {
-   public void timerCallback();
-}
+//interface TimerClient {
+//   public void timerCallback();
+//}
 
-public class Tests implements TimerClient
+public class Tests //implements TimerClient
 {
    /**
     * Author: Elijah Smith
@@ -64,9 +64,9 @@ public class Tests implements TimerClient
     boolean timerExpired = false;
     boolean state = false;
     //method needed for TimerTest
-    public void timerCallback() {
-        timerExpired = true;
-    }   
+    //public void timerCallback() {
+      //  timerExpired = true;
+   // }   
     
     /**
      * Author: Elijah Smith
