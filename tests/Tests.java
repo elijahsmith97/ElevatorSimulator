@@ -6,7 +6,7 @@ interface TimerClient {
    public void timerCallBack();
 }
 
-public class Tests
+public class Tests implements TimerClient
 {
    /**
     * Author: Elijah Smith
@@ -147,7 +147,7 @@ public class Tests
             {
                 try
                 {
-                    Thread.sleep((int)pollDelay);
+               r    Thread.sleep((int)pollDelay);
                     
                 }
                 catch(Exception e)
