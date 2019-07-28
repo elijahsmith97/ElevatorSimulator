@@ -23,7 +23,7 @@ public class PassengerManager
             dest = rand.nextInt(numFloors) + 1;
         }
 
-        Passenger newPass = new Passenger(start, dest);
+        Passenger newPass = new Passenger(elevator, start, dest);
         passengers.add(newPass);
         
         return newPass;
