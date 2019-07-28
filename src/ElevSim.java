@@ -59,8 +59,8 @@ public class ElevSim {
             System.out.println("The elevator has arrived: \nFloor Level: " + current);
             System.out.println("____________________________\n\n");
             while(Character.toLowerCase(decision2) != 'n' && decision != 's') {
-                System.out.println("\nAre there new passengers? \n\nNumber of Passangers: " + passanger);
-                System.out.println(" Please enter: \n n for No, \n y for Yes, \n l to enter number of passangers that have left.\n");
+                System.out.println("\nAre there new passengers? \n\nNumber of Passengers: " + passanger);
+                System.out.println(" Please enter: \n n for No, \n y for Yes, \n l to enter number of passengers that have left.\n");
                 decision2 = kb.next().charAt(0);
                 switch(Character.toLowerCase(decision2)) {
                     case 'y':
@@ -76,10 +76,10 @@ public class ElevSim {
                     case 'l':
                         decision2 = 'l';
                         int departing;
-                        System.out.println("Enter number of passangers leaving:");
+                        System.out.println("Enter number of passengers leaving:");
                         departing = kb.nextInt();
                         passanger = passanger - departing;
-                        System.out.println(departing + " passenger(s) have left, " + passanger + " passangers remain."); 
+                        System.out.println(departing + " passenger(s) have left, " + passanger + " passengers remain."); 
                         break;
                         
                     case 's':
