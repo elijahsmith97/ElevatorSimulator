@@ -7,7 +7,9 @@ public class ElevSim {
         int passCurrent = 1;
         char decision = 'u';
         int maxFloors = 100;
-        //Elevator elev = new Elevator(maxFloors);
+      
+        Elevator elev = new Elevator(maxFloors);
+        int current = elev.getCurrentFloor();
         //Controller control = new Controller(elev);
 
         while(Character.toLowerCase(decision) != 's') {
@@ -16,8 +18,11 @@ public class ElevSim {
             switch(Character.toLowerCase(decision)) {
                 case 'u':
                     try {
-                        Thread.sleep(3000);
+
                         System.out.println("Going up...");
+                        Thread.sleep(3000);
+                        System.out.println(current);
+                        current++;
                     } 
                     
                     catch (InterruptedException e) {
@@ -27,8 +32,10 @@ public class ElevSim {
                 
                 case 'd':
                     try {
-                        Thread.sleep(3000);
                         System.out.println("Going down...");
+                        Thread.sleep(3000);
+                        System.out.println(current);
+                        current++;
                     } 
                     
                     catch (InterruptedException e) {
@@ -42,12 +49,12 @@ public class ElevSim {
                     break;
             }
             
+            
             /* cycle for next passenger
             passManager.next();
             control.next();
             status.display();
             */
-
             /*if(display.getStatus() == 's')
                 decision = "s";
             */
