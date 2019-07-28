@@ -24,13 +24,13 @@ public class DefaultController extends Controller
       boolean pushTrue = elevator.pushTrue();
 
 
-      if(currentFloor == 0 || currentFloor == maxFloor)
+      if(currentFloor == 1 || currentFloor == maxFloor)
       {
          movingUp = false;
          movingDown = false;
       }
 
-      if(currentFloor == 0 && (destFloors.size() > 0 || pushTrue))
+      if(currentFloor == 1 && (destFloors.size() > 0 || pushTrue))
       {
          movingUp = true;
       }
