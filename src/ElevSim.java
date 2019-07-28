@@ -25,39 +25,30 @@ public class ElevSim implements TimerClient {
         char decision = 'u';
         int maxFloors = 100;
         Elevator elev = new Elevator(maxFloors);
+        PassengerManager passman = new PassengerManager(elev);
+        Display disp = new Display(passman,elev);
         Timer time = new Timer(3000);
         Timer time2 = new Timer(2000);
         int current = elev.getCurrentFloor();
         int passenger = 1;
-        //Controller control = new Controller(elev);
-        System.out.println("Welcome to our Elevator Simulation:\n  (Enter s to exit simulation) \n\n\n");
-        time2.run();
-        System.out.println("The doors are opening...\n");
-        time2.run();
-        System.out.println("Please enter the elevator:");
-        time2.run();
+
+        disp.start();
  
         while(Character.toLowerCase(decision) != 's') {
-
             System.out.println("Which direction would you like to go? \n Please enter: \n u for up, \n d for down \n\n");
             decision = kb.next().charAt(0);
             
             switch(Character.toLowerCase(decision)) {
-                case 'u':
-                System.out.println("\nGoing up to floor " + (current + 1) + "\n");
-                time.run();
-                current++;
+                case 'u':  
+                    disp.goingUp();
                     break;
                 
                 case 'd':
-                    System.out.println("\nGoing down to floor " + (current - 1) + "\n");
-                    time.run();
-                    current--;   
+                    disp.goingDown(); 
                     break;
                 
                 default:
-                    decision = 's';
-                    System.out.println("Exiting simulation...");
+                    disp.exit();
                     break;
             }
             
@@ -98,9 +89,8 @@ public class ElevSim implements TimerClient {
                         break;
                         
                     case 's':
-                        decision = 's';
-                        System.out.println("Exiting simulation...\n");
-                        break;
+                        disp.exit();
+                        
                     default:
                         decision2 = 'n';
                         break;
