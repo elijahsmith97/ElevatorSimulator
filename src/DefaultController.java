@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class DefaultController extends Controller
 {
-   private bool movingUp;
-   private bool movingDown;
+   private boolean movingUp;
+   private boolean movingDown;
    
    public DefaultController(Elevator elevator)
    {
