@@ -2,11 +2,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 //brought in from TimerTest.java
-//interface TimerClient {
-//   public void timerCallback();
-//}
+interface TimerClient {
+   public void timerCallback();
+}
 
-public class Tests //implements TimerClient
+public class Tests implements TimerClient
 {
    /**
     * Author: Elijah Smith
@@ -56,17 +56,17 @@ public class Tests //implements TimerClient
         assertEquals(1, newCurrent);  
    }
    
-    //simple values needed for TimerTest 
+    //simple values needed for Timer
     double numSeconds = 4.5;
     double pollDelay = 0.25;
     int numPolls = 0; 
     int numExpectedPolls = (int)(numSeconds / pollDelay) - 1; // last poll will work!
     boolean timerExpired = false;
     boolean state = false;
-    //method needed for TimerTest
-    //public void timerCallback() {
-      //  timerExpired = true;
-   // }   
+    //method needed for TimerClient
+    public void timerCallback() {
+          timerExpired = true;
+   }   
     
     /**
      * Author: Elijah Smith
