@@ -1,8 +1,3 @@
-/**
- * Author: Elijah Smith
- * version: Mon Jul 15, 2019
- * Issue #2
- */
 import java.util.Scanner; 
 
 public class ElevSim {
@@ -58,7 +53,7 @@ public class ElevSim {
                         decision = 's';
                      //elev.addDestinationFloor(floorDecision);
                      break;
-                
+               
                 default:
                      decision = 's';
                      System.out.print("Exiting simulation...\n");
