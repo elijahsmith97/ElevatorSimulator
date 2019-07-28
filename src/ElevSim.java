@@ -56,10 +56,10 @@ public class ElevSim {
                 decision = "s";
             */
             char decision2 = 'y';
-            System.out.println("The elevator has arrived: \nFloor Level: " + current + "\n\n");
-            
+            System.out.println("The elevator has arrived: \nFloor Level: " + current);
+            System.out.println("____________________________\n\n");
             while(Character.toLowerCase(decision2) != 'n' && decision != 's') {
-                System.out.println("\nAre there new passengers? \n Number of Passangers: " + passanger);
+                System.out.println("\nAre there new passengers? \n\nNumber of Passangers: " + passanger);
                 System.out.println(" Please enter: \n n for No, \n y for Yes, \n l to enter number of passangers that have left.\n");
                 decision2 = kb.next().charAt(0);
                 switch(Character.toLowerCase(decision2)) {
