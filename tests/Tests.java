@@ -3,7 +3,7 @@ import org.junit.Test;
 
 //brought in from TimerTest.java
 interface TimerClient {
-   public void timerCallBack();
+   public void timerCallback();
 }
 
 public class Tests implements TimerClient
