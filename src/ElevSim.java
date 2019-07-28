@@ -10,6 +10,7 @@ public class ElevSim {
         Elevator elev = new Elevator(maxFloors);
         Timer time = new Timer(3000);
         Timer time2 = new Timer(2000);
+
         int current = elev.getCurrentFloor();
         //Controller control = new Controller(elev);
         System.out.println("Welcome to our Elevator Simulation \n\n\n");
@@ -22,15 +23,16 @@ public class ElevSim {
             decision = kb.next().charAt(0);
             switch(Character.toLowerCase(decision)) {
                 case 'u':
+
                 System.out.println("\nGoing up to floor " + (current + 1));
                 time.run();
                 current++;
                     break;
                 
                 case 'd':
-                    System.out.println("\nGoing down to floor " + (current - 1));
-                    time.run();
-                    current--;   
+                System.out.println("\nGoing down to floor " + (current - 1));
+                time.run();
+                current--;
                     break;
                 
                 default:
@@ -39,12 +41,12 @@ public class ElevSim {
                     break;
             }
             
+            
             /* cycle for next passenger
             passManager.next();
             control.next();
             status.display();
             */
-
             /*if(display.getStatus() == 's')
                 decision = "s";
             */
