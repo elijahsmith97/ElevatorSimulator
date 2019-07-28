@@ -8,6 +8,16 @@ interface TimerClient {
 }
 
 public class ElevSim implements TimerClient {
+    
+    /**
+     * Author: Elijah Smith
+     * needed for Timer/TimerClient
+     */ 
+    boolean timerExpired = false;
+    interface void timerCallback() {
+        timerExpired = true;
+    }
+   
     public static void main(String[] args) throws InterruptedException {
         Scanner kb = new Scanner(System.in);
         int elevCurrent = 1;
