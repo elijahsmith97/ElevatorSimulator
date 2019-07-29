@@ -29,8 +29,8 @@ public class Elevator {
         this.currentFloor = currentFloor;
         this.destinationFloor = new ArrayList<Integer>();
         this.numberOfFloors = numberOfFloors;
-        pushedUp = new boolean[numberOfFloors];
-        pushedDown = new boolean[numberOfFloors];
+        pushedUp = new boolean[numberOfFloors + 1];
+        pushedDown = new boolean[numberOfFloors + 1];
     }
 
     /**

@@ -1,58 +1,54 @@
 /*
- *
- *Author Jake Wooten
- * Iusse #7
- * */
+*
+* Author: Matthew Frankel
+* Issue 56
+* */
 
-public class Display {
+public class Display 
+{
+   static Elevator el = new Elevator(100);
+   PassengerManager pm;
+   Timer time = new Timer(3000);
+   Timer time2 = new Timer(2000);
+   public static int current = el.getCurrentFloor();
 
-Elevator elevator;
-Passenger passenger;
-
-    public Display(Passenger passenger, Elevator elevator) {
-       
-        this.passenger = passenger;
-        this.elevator = elevator;
-    }
-    /*
-     *Displays floor passenger is currently on
-     */
-
-    public void display_currentP () {
-
-        
-        System.out.println("Passenger is on floor " + passenger.getStartFloor());
-    }
+   public Display(PassengerManager pm, Elevator el) 
+   {   
+       this.pm = pm;
+       this.el = el;
+   }
+   
+   public void start()
+   {
+       System.out.println("Welcome to our Elevator Simulation:\n  (Enter s to exit simulation) \n\n\n");
+       time2.run();
+       System.out.println("The doors are opening...\n");
+       time2.run();
+       System.out.println("Please enter the elevator:");
+       time2.run();
+   }
+   
+   public void goingUp()
+   {
+       System.out.println("\nGoing up to floor " + (current + 1) + "\n");
+       time.run();
+       current++;
+   }
+   
+   public void goingDown()
+   {   
+       System.out.println("\nGoing down to floor " + (current - 1) + "\n");
+       time.run();
+       current--;
+   }
     
-    /*
-     *Displays the floor the passenger has selected
-     */
-
-    public void display_selectP () {
-
-        System.out.println("Passenger has selected floor " + passenger.getDestinationFloor());
-    }
-    
-    /*
-     *Displays the floor the passenger has arrived at
-     */
-    public void display_destP () {
-        System.out.println("Passenger has arrived at floor " + passenger.getDestinationFloor());
-    }
-    
-    /*
-     *Displays the floor the elevator leaves from
-     */
-    public void display_currentE () {
-       
-        System.out.println("Elevator doors close\nElevator leaves from floor " + elevator.getCurrentFloor());
-    }
-
-    /*
-     *Displays the floor the elevator has arrived at
-     */
-    public void display_destE () {
-    
-        System.out.println("Elevator doors open\nElevator arrives at floor " + elevator.getDestinationFloor());
-    }
+   public void exit()
+   {
+       System.out.println("Exiting simulation...");                   
+   }
+                          
+   public void displayCurrentFloor()
+   {
+       System.out.println("Elevator is currently on floor " + el.getCurrentFloor());
+   }
 }
