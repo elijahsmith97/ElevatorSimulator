@@ -10,8 +10,10 @@ public class ElevSim {
         int floorDecision = 1;
         String stringDecision = "";
         int maxFloors = 100;
-        
+      
         Elevator elev = new Elevator(maxFloors);
+        int current = elev.getCurrentFloor();
+
         //Controller control = new Controller(elev);
         //PassengerManager passManager = new PassengerManager(maxFloors);
         //
@@ -41,10 +43,12 @@ public class ElevSim {
                     if(floorDecision > maxFloors || floorDecision <=  passCurrent)
                         decision = 's';
                     //elev.addDestinationFloor(floorDecision);
+
                     break;
 
                 //elevator going Down case
                 case 'd':
+
                      System.out.print("Waiting on elevator to go Down...\n");
                      //elev.pushDown();
                      System.out.print("To which floor would you like to go down to? ");
@@ -53,19 +57,18 @@ public class ElevSim {
                         decision = 's';
                      //elev.addDestinationFloor(floorDecision);
                      break;
-               
+
                 default:
                      decision = 's';
                      System.out.print("Exiting simulation...\n");
                      break;
             }
-           
+
             /* cycle for next passenger
             passManager.next();
             control.next();
             status.display();
             */
-
             /*if(display.getStatus() == 's')
                 decision = "s";
             */
