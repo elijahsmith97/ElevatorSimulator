@@ -1,23 +1,6 @@
 import java.util.Scanner; 
 
-/**
- * Author: Elijah Smith
- */ 
-interface TimerClient {
-    public void timerCallback();
-}
-
-public class ElevSim implements TimerClient {
-    
-    /**
-     * Author: Elijah Smith
-     * needed for Timer/TimerClient
-     */ 
-    boolean timerExpired = false;
-    public  void timerCallback() {
-        timerExpired = true;
-    }
-   
+public class ElevSim {
     public static void main(String[] args) throws InterruptedException {
         Scanner kb = new Scanner(System.in);
         int elevCurrent = 1;

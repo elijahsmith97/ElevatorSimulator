@@ -1,7 +1,3 @@
-interface TimerClient {
-	public void timerCallback();
-}
-
 public class TimerTest implements TimerClient
 {
 	double numSeconds = 4.5;
