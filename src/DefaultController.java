@@ -18,7 +18,7 @@ public class DefaultController extends Controller
       int maxFloor = elevator.getNumberOfFloors();
       int currentFloor = elevator.getCurrentFloor();
 
-      ArrayList<Integer> destFloors = elevator.getDestinationFloor();
+      boolean[] destFloors = elevator.getDestinationFloor();
       boolean pushUpFloors[] = elevator.getPushedUp();
       boolean pushDownFloors[] = elevator.getPushedDown();
       boolean pushTrue = elevator.pushTrue();
@@ -30,16 +30,16 @@ public class DefaultController extends Controller
          movingDown = false;
       }
 
-      if(currentFloor == 1 && (destFloors.size() > 0 || pushTrue))
+      if(currentFloor == 1 && (destFloors.length > 0 || pushTrue))
       {
          movingUp = true;
       }
-      else if (currentFloor == maxFloor && (destFloors.size() > 0 || pushTrue))
+      else if (currentFloor == maxFloor && (destFloors.length > 0 || pushTrue))
       {
          movingDown = true;
       }
 
-      if(destFloors.contains(currentFloor))
+      if(destFloors[currentFloor])
       {
          elevator.stop();
       }
