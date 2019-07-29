@@ -6,8 +6,11 @@
 
 public class Display 
 {
-   Elevator el;
+   static Elevator el = new Elevator(100);
    PassengerManager pm;
+   Timer time = new Timer(3000);
+   Timer time2 = new Timer(2000);
+   public static int current = el.getCurrentFloor();
 
    public Display(PassengerManager pm, Elevator el) 
    {   
@@ -17,19 +20,26 @@ public class Display
    
    public void start()
    {
-       System.out.println("Starting simulation...");
-       System.out.println("Press \"s\" to exit at any time");
+       System.out.println("Welcome to our Elevator Simulation:\n  (Enter s to exit simulation) \n\n\n");
+       time2.run();
+       System.out.println("The doors are opening...\n");
+       time2.run();
+       System.out.println("Please enter the elevator:");
+       time2.run();
    }
    
    public void goingUp()
    {
-       System.out.println("Elevator going up...");
-       el.getCurrentFloor();
+       System.out.println("\nGoing up to floor " + (current + 1) + "\n");
+       time.run();
+       current++;
    }
    
    public void goingDown()
-   {
-       System.out.println("Elevator going down...");                   
+   {   
+       System.out.println("\nGoing down to floor " + (current - 1) + "\n");
+       time.run();
+       current--;
    }
     
    public void exit()
