@@ -302,4 +302,16 @@ public class Tests implements TimerClient
    {
 
    }
+
+   @Test
+   public void testDefaultController1()
+   {
+      Elevator elev = new Elevator(1, 10);
+      DefaultController control = new DefaultController(elev);
+
+      elev.pushUp(5);
+      control.next();
+
+      assertEquals(2, elev.getCurrentFloor());
+   }
 }

@@ -1,11 +1,16 @@
 import java.util.Scanner; 
 
 public class ElevSim {
+    
+
     public static void main(String[] args) throws InterruptedException {
         Scanner kb = new Scanner(System.in);
         int elevCurrent = 1;
+        int passDestination = 1;
         int passCurrent = 1;
         char decision = 'u';
+        int floorDecision = 1;
+        String stringDecision = "";
         int maxFloors = 100;
         Elevator elev = new Elevator(maxFloors);
         PassengerManager passman = new PassengerManager(elev);
@@ -24,17 +29,19 @@ public class ElevSim {
             switch(Character.toLowerCase(decision)) {
                 case 'u':  
                     disp.goingUp();
-                    break;
-                
+
+                //elevator going Down case
                 case 'd':
+                
                     disp.goingDown(); 
                     break;
                 
                 default:
+                    decision = 's';
                     disp.exit();
                     break;
             }
-            
+
             /* cycle for next passenger
             passManager.next();
             control.next();
@@ -44,9 +51,11 @@ public class ElevSim {
             /*if(display.getStatus() == 's')
                 decision = "s";
             */
+
             char decision2 = 'y';
             System.out.println("The elevator has arrived: \nFloor Level: " + current);
             System.out.println("____________________________\n\n");
+            
             while(Character.toLowerCase(decision2) != 'n' && decision != 's') {
                 System.out.println("\nAre there new passengers? \n\nNumber of Passengers: " + passenger);
                 System.out.println(" Please enter: \n n for No, \n y for Yes, \n l to enter number of passengers that have left.\n");
@@ -77,9 +86,21 @@ public class ElevSim {
                     default:
                         decision2 = 'n';
                         break;
-                }
-                
+                }  
             }
-        }
-    }
-}
+           
+            switch(decision) {
+                case 'u':
+                    System.out.print("Going up to floor " + floorDecision + "\n");
+                    break;
+                case 'd':
+                    System.out.print("Going down to floor " + floorDecision + "\n");   
+                    break;
+                default:
+                    decision = 's';
+                    System.out.print("Exiting simulation...\n");
+                    break;
+            }
+             
+    
+}}}
