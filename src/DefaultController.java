@@ -30,11 +30,11 @@ public class DefaultController extends Controller
          movingDown = false;
       }
 
-      if(currentFloor == 1 && (destFloors.size > 0 || pushTrue))
+      if(currentFloor == 1 && (destFloors.length > 0 || pushTrue))
       {
          movingUp = true;
       }
-      else if (currentFloor == maxFloor && (destFloors.size > 0 || pushTrue))
+      else if (currentFloor == maxFloor && (destFloors.length > 0 || pushTrue))
       {
          movingDown = true;
       }
