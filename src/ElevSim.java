@@ -21,7 +21,7 @@ public class ElevSim {
         while(true)
         {
             passengerManager.next();
-            controller.next();
+            control.next();
 
             System.out.println(elev.getCurrentFloor());
         }
