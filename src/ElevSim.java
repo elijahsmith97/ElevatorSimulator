@@ -28,11 +28,13 @@ public class ElevSim {
             
             switch(Character.toLowerCase(decision)) {
                 case 'u':  
+                    decision = 'u';
                     disp.goingUp();
+                    break;
 
                 //elevator going Down case
                 case 'd':
-                
+                    decision = 'd';
                     disp.goingDown(); 
                     break;
                 
@@ -80,27 +82,14 @@ public class ElevSim {
                         System.out.println(departing + " passenger(s) have left, " + passenger + " passengers remain."); 
                         break;
                         
-                    case 's':
-                        disp.exit();
                         
                     default:
-                        decision2 = 'n';
+                        decision2 = 's';
+                        disp.exit();
                         break;
                 }  
             }
            
-            switch(decision) {
-                case 'u':
-                    System.out.print("Going up to floor " + floorDecision + "\n");
-                    break;
-                case 'd':
-                    System.out.print("Going down to floor " + floorDecision + "\n");   
-                    break;
-                default:
-                    decision = 's';
-                    System.out.print("Exiting simulation...\n");
-                    break;
-            }
              
     
 }}}
