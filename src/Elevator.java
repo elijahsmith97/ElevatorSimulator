@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class Elevator {
 
     private int currentFloor;
-    private ArrayList<Integer> destinationFloor;
+    private boolean[] destinationFloor;
     private int numberOfFloors;
     private boolean[] pushedUp;
     private boolean[] pushedDown;
@@ -17,7 +17,7 @@ public class Elevator {
     public Elevator(int numberOfFloors) {
         this.currentFloor = 1;
         this.numberOfFloors = numberOfFloors;
-        this.destinationFloor = new ArrayList<>();
+        destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
     }
@@ -27,8 +27,8 @@ public class Elevator {
      */ 
     public Elevator(int currentFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
-        this.destinationFloor = new ArrayList<Integer>();
-        this.numberOfFloors = numberOfFloors;
+        this.destinationFloor = destinationFloor;
+        destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors + 1];
         pushedDown = new boolean[numberOfFloors + 1];
     }
@@ -106,11 +106,11 @@ public class Elevator {
         return this.currentFloor;
       }
 
-      public void addDestinationFloor(int df) {
-        destinationFloor.add(df);
+      public void addDestinationFloor(int currentFloor) {
+          destinationFloor[currentFloor] = true;
       }
   
-      public ArrayList<Integer> getDestinationFloor() {
+      public boolean[] getDestinationFloor() {
         return this.destinationFloor;
       }
       
