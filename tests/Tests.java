@@ -255,6 +255,38 @@ public class Tests implements TimerClient
         assertEquals(true, down);
     }
    
+     @Test 
+   public void testdisplay1()
+   {
+      Elevator elev = new Elevator(1, 10);
+      PassengerManager passman = new PassengerManager(elev);
+      Display disp = new Display(passman, elev);
+      disp.goingUp();
+      disp.goingDown();
+
+      assertEquals(Display.current, 1);
+   }
+   
+
+   @Test 
+   public void testdisplay2()
+   {
+      Elevator elev = new Elevator(1, 10);
+      PassengerManager passman = new PassengerManager(elev);
+      Display disp = new Display(passman, elev);
+      disp.goingUp();
+      disp.goingUp();
+      disp.goingUp();
+      disp.goingUp();
+      disp.goingUp();
+      
+      assertEquals(Display.current, 6);
+   }
+   
+   
+   
+   
+   
    /**
     * Author: Elijah Smith
       
