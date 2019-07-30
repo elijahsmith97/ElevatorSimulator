@@ -4,12 +4,12 @@ import java.util.concurrent.TimeUnit;
 public class Elevator {
 
     private int currentFloor;
-    private boolean[] destinationFloors;
+    private boolean[] destinationFloor;
     private int numberOfFloors;
     private boolean[] pushedUp;
     private boolean[] pushedDown;
     private boolean stopped;
-
+    Timer time = new Timer(3000);
     /**
      * Author: Elijah Smith
      * Issue #61 new Constructor
@@ -17,7 +17,7 @@ public class Elevator {
     public Elevator(int numberOfFloors) {
         this.currentFloor = 1;
         this.numberOfFloors = numberOfFloors;
-        destinationFloors = new boolean[numberOfFloors+1];
+        destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
     }
@@ -27,9 +27,8 @@ public class Elevator {
      */ 
     public Elevator(int currentFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
-        this.numberOfFloors = numberOfFloors;
-         
-        destinationFloors = new boolean[numberOfFloors+1];
+        this.destinationFloor = destinationFloor;
+        destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors + 1];
         pushedDown = new boolean[numberOfFloors + 1];
     }
@@ -40,16 +39,9 @@ public class Elevator {
      * @throws Exception 
      */
     public void moveDown() {
+        time.run();
         currentFloor--;
         stopped = false;
-        try {
-            Thread.sleep(3000);
-            System.out.println("Elevator going down...");
-        } 
-        
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
     
    /**
@@ -57,16 +49,9 @@ public class Elevator {
     * Issue #57/51 moveUp
     */
     public void moveUp() {
+        time.run();
         currentFloor++;
         stopped = false;
-        try {
-            Thread.sleep(3000);
-            System.out.println("Elevator going up...");
-        } 
-        
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
     
     /**
@@ -90,17 +75,6 @@ public class Elevator {
         }
         return false;
     }
-
-    public boolean hasDestFloor()
-    {
-        for(int loop = 0; loop < destinationFloors.length; loop++)
-        {
-            if(destinationFloors[loop])
-               return true;
-        }
-
-        return false;
-    }
     
     /**
      * Author: Elijah Smith
@@ -119,11 +93,11 @@ public class Elevator {
       }
 
       public void addDestinationFloor(int currentFloor) {
-          destinationFloors[currentFloor] = true;
+          destinationFloor[currentFloor] = true;
       }
   
       public boolean[] getDestinationFloor() {
-        return this.destinationFloors;
+        return this.destinationFloor;
       }
       
       public int getNumberOfFloors() {
@@ -147,7 +121,7 @@ public class Elevator {
       }
       public void stop() {
         this.stopped = true;
-        destinationFloors[currentFloor] = false;
+        destinationFloor[currentFloor] = false;
         pushedUp[currentFloor] = false;
         pushedDown[currentFloor] = false;
       }
