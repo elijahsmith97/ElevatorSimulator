@@ -50,6 +50,6 @@ public class Display
 
    public void displayCurrentFloor()
    {
-       System.out.println("Elevator is currently on floor " + el.getCurrentFloor)();
+       System.out.println("Elevator is currently on floor " + el.getCurrentFloor();
    }
 }
