@@ -10,6 +10,7 @@ public class Display
    PassengerManager pm;
    Timer time = new Timer(3000);
    Timer time2 = new Timer(2000);
+   public static int current = el.getCurrentFloor();
 
    public Display(PassengerManager pm, Elevator el) 
    {   
@@ -34,22 +35,22 @@ public class Display
    
    public void goingUp()
    {
-       System.out.println("\nGoing up to floor " + (el.getCurrentFloor() + 1) + "\n");
+       System.out.println("\nGoing up to floor " + (current + 1) + "\n");
        time.run();
        System.out.print("\007");
-       el.getCurrentFloor()++;
+       current++;
    }
    
    public void goingDown()
    {   
-       System.out.println("\nGoing down to floor " + (el.getCurrentFloor() - 1) + "\n");
+       System.out.println("\nGoing down to floor " + (current - 1) + "\n");
        time.run();
        System.out.print("\007");
-       el.getCurrentFloor()--;
+       current--;
    }
 
    public void displayCurrentFloor()
    {
-       System.out.println("Elevator is currently on floor " + el.getCurrentFloor());
+       System.out.println("Elevator is currently on floor " + current);
    }
 }
