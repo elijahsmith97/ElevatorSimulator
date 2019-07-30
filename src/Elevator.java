@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class Elevator {
 
     private int currentFloor;
-    private boolean[] destinationFloor;
+    private boolean[] destinationFloors;
     private int numberOfFloors;
     private boolean[] pushedUp;
     private boolean[] pushedDown;
@@ -17,7 +17,7 @@ public class Elevator {
     public Elevator(int numberOfFloors) {
         this.currentFloor = 1;
         this.numberOfFloors = numberOfFloors;
-        destinationFloor = new boolean[numberOfFloors+1];
+        destinationFloors = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
     }
@@ -27,8 +27,9 @@ public class Elevator {
      */ 
     public Elevator(int currentFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
-        this.destinationFloor = destinationFloor;
-        destinationFloor = new boolean[numberOfFloors+1];
+        this.numberOfFloors = numberOfFloors;
+         
+        destinationFloors = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors + 1];
         pushedDown = new boolean[numberOfFloors + 1];
     }
@@ -89,6 +90,17 @@ public class Elevator {
         }
         return false;
     }
+
+    public boolean hasDestFloor()
+    {
+        for(int loop = 0; loop < destinationFloors.length; loop++)
+        {
+            if(destinationFloors[loop])
+               return true;
+        }
+
+        return false;
+    }
     
     /**
      * Author: Elijah Smith
@@ -107,11 +119,11 @@ public class Elevator {
       }
 
       public void addDestinationFloor(int currentFloor) {
-          destinationFloor[currentFloor] = true;
+          destinationFloors[currentFloor] = true;
       }
   
       public boolean[] getDestinationFloor() {
-        return this.destinationFloor;
+        return this.destinationFloors;
       }
       
       public int getNumberOfFloors() {
@@ -135,7 +147,7 @@ public class Elevator {
       }
       public void stop() {
         this.stopped = true;
-        destinationFloor[currentFloor] = false;
+        destinationFloors[currentFloor] = false;
         pushedUp[currentFloor] = false;
         pushedDown[currentFloor] = false;
       }
