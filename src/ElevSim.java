@@ -26,8 +26,9 @@ public class ElevSim {
         {
             passengerManager.next();
             control.next();
-
-            System.out.println(elev.getCurrentFloor());
+            System.out.println("\nPassanger 1 is currently on " + p1.getStartFloor());
+            System.out.println("Passanger 2 is currently on " + p2.getStartFloor());
+            System.out.println("\nElevator is currently on " + elev.getCurrentFloor()); 
         }
    }
 }
