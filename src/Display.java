@@ -37,7 +37,7 @@ public class Display
        System.out.println("\nGoing up to floor " + (el.getCurrentFloor() + 1) + "\n");
        time.run();
        System.out.print("\007");
-       current++;
+       el.getCurrentFloor()++;
    }
    
    public void goingDown()
@@ -45,7 +45,7 @@ public class Display
        System.out.println("\nGoing down to floor " + (el.getCurrentFloor() - 1) + "\n");
        time.run();
        System.out.print("\007");
-       current--;
+       el.getCurrentFloor()--;
    }
 
    public void displayCurrentFloor()
