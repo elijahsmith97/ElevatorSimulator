@@ -18,13 +18,19 @@ public class Display
        this.el = el;
    }
    
+   public void display()
+   {
+      start();
+      goingUp();
+      goingDown();
+      
+   }
+   
    public void start()
    {
-       System.out.println("Welcome to our Elevator Simulation:\n  (Enter s to exit simulation) \n\n\n");
+       System.out.println("Welcome to our Elevator Simulation:\n  (Enter Ctrl+C to exit simulation) \n\n\n");
        time2.run();
        System.out.println("The doors are opening...\n");
-       time2.run();
-       System.out.println("Please enter the elevator:");
        time2.run();
    }
    
@@ -40,11 +46,6 @@ public class Display
        System.out.println("\nGoing down to floor " + (current - 1) + "\n");
        time.run();
        current--;
-   }
-    
-   public void exit()
-   {
-       System.out.println("Exiting simulation...");                   
    }
                           
    public void displayCurrentFloor()
