@@ -36,4 +36,9 @@ public class PassengerManager
            passengers.get(i).next();
         }
     }
+    
+    public ArrayList<Passenger> getPassengers()
+    {
+        return passengers;
+    } 
 }
