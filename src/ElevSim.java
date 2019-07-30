@@ -2,7 +2,6 @@ public class ElevSim {
     
 
     public static void main(String[] args) throws InterruptedException {
-
         int maxFloors = 10;
       
         Elevator elev = new Elevator(maxFloors);
@@ -20,5 +19,5 @@ public class ElevSim {
             control.next();
             System.out.println("\nElevator is currently on " + elev.getCurrentFloor()); 
         }
-   }
+    }
 }
