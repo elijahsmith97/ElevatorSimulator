@@ -15,12 +15,12 @@ public class PassengerManager
     public Passenger newPassenger() 
     {
         Random rand = new Random();
-        int start = rand.nextInt(elevator.getNumberOfFloors) + 1;
-        int dest = rand.nextInt(elevator.getNumberOfFloors) + 1;
+        int start = rand.nextInt(elevator.getNumberOfFloors()) + 1;
+        int dest = rand.nextInt(elevator.getNumberOfFloors()) + 1;
         
         while (dest == start) 
         {
-            dest = rand.nextInt(elevator.getNumberOfFloors) + 1;
+            dest = rand.nextInt(elevator.getNumberOfFloors()) + 1;
         }
 
         Passenger newPass = new Passenger(elevator, start, dest);
