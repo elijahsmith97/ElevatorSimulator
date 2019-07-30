@@ -128,6 +128,7 @@ public class Tests implements TimerClient
      * Author: Elijah Smith
      * test brought from TimerTest.java
      */ 
+    /*
     @Test
     public void runInterruptTest() {
             numPolls = 0;
@@ -176,6 +177,7 @@ public class Tests implements TimerClient
                 assertTrue(state);   
             }
     }
+    */
      
    /**
     * Author: Elijah Smith
@@ -283,26 +285,18 @@ public class Tests implements TimerClient
       assertEquals(Display.current, 6);
    }
    
-   
-   
-   
-   
-   /**
-    * Author: Elijah Smith
+   @Test
+   public void testHasDestFloor()
+   {
+      Elevator elev = new Elevator(1, 10);
       
-    */  
-   @Test
-   public void testPassengerConstructor1()
-   {
-        
+      assertEquals(false, elev.hasDestFloor());
+      
+      elev.addDestinationFloor(7);
+      
+      assertEquals(true, elev.hasDestFloor());  
    }
-
-   @Test
-   public void testPassengerConstructor2()
-   {
-
-   }
-
+   
    @Test
    public void testDefaultController1()
    {
