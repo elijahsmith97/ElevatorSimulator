@@ -1,23 +1,36 @@
 public class Passenger
 {
+   private Elevator elev;
+
    private int startFloor;
    private int destinationFloor;
+   
    private boolean waiting;
-   Elevator elev;
+   private boolean riding;
+   private boolean done;
+   
    public Passenger(Elevator elev, int startFloor, int destinationFloor)
    {
       this.elev = elev;
+
       this.startFloor = startFloor;
       this.destinationFloor = destinationFloor;
+      
       this.waiting = false;
+      this.riding = false;
+      this.done = false;
    }
 
    public Passenger(Elevator elev, int destinationFloor)
    {
       this.elev = elev;
-      this.waiting = false;
+      
       this.startFloor = 1;
       this.destinationFloor = destinationFloor;
+      
+      this.waiting = false;
+      this.riding = false;
+      this.done = false;
    }
 
    public void next()
@@ -26,13 +39,26 @@ public class Passenger
        {
            if(this.destinationFloor > elev.getCurrentFloor())
            {
+               System.out.println("Passenger on floor " + startFloor + " pushed Up.");
                elev.pushUp(this.startFloor);
            }
            else
            {
+               System.out.println("Passenger on floor " + startFloor + " pushed Down.");
                elev.pushDown(this.startFloor);
            }
            this.waiting = true;
+       }
+       else if(waiting && !riding && elev.getStopped() && elev.getCurrentFloor() == startFloor)
+       {
+           System.out.println("Passenger boarded elevator and pushed floor " + destinationFloor + ".");
+           elev.addDestinationFloor(destinationFloor);
+           this.riding = true;
+       }
+       else if(elev.getStopped() && elev.getCurrentFloor() == destinationFloor)
+       {
+           System.out.println("Passenger got off.");
+           this.done = true;
        }
    }
 
