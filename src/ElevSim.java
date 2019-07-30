@@ -1,6 +1,5 @@
 public class ElevSim {
     
-
     public static void main(String[] args) throws InterruptedException {
         int maxFloors = 10;
       
