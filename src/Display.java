@@ -23,7 +23,6 @@ public class Display
       start();
       goingUp();
       goingDown();
-      
    }
    
    public void start()
@@ -38,6 +37,7 @@ public class Display
    {
        System.out.println("\nGoing up to floor " + (current + 1) + "\n");
        time.run();
+       System.out.print("\007");
        current++;
    }
    
@@ -45,6 +45,7 @@ public class Display
    {   
        System.out.println("\nGoing down to floor " + (current - 1) + "\n");
        time.run();
+       System.out.print("\007");
        current--;
    }
                           
