@@ -78,9 +78,9 @@ public class Elevator {
     public int hasDestFloors()
     {
         int count = 0;
-        for(int loop = 0; loop < destinationFloors.length; loop++)
+        for(int loop = 0; loop < destinationFloor.length; loop++)
         {
-            if(destinationFloors[loop])
+            if(destinationFloor[loop])
                count++;
         }
         return count;
