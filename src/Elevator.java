@@ -28,6 +28,8 @@ public class Elevator {
         this.numberOfFloors = numberOfFloors;
         this.destinationFloor = new boolean[numberOfFloors+1];
         this.stopped = true;
+        pushedUp = new boolean[numberOfFloors + 1];
+        pushedDown = new boolean[numberOfFloors + 1];
     }
 
     /**
