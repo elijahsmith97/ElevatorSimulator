@@ -4,10 +4,13 @@ public class DefaultController extends Controller
 {
    private boolean movingUp;
    private boolean movingDown;
+   private Elevator elevator;
    
    public DefaultController(Elevator[] elevators)
    {
       super(elevators);
+      
+      elevator = elevators[0];
 
       this.movingUp = false;
       this.movingDown = false;
