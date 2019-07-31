@@ -15,7 +15,6 @@ public class ElevSim {
         char decision = 'u';
         int floorDecision = 1;
         String stringDecision = "";
-        int maxFloors = 10;
       
         Elevator elev = new Elevator(maxFloors);
         PassengerManager passengerManager= new PassengerManager(elev);
