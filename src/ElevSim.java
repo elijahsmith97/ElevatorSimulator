@@ -12,9 +12,11 @@ public class ElevSim {
         String stringDecision = "";
         int maxFloors = 10;
         Scanner kb = new Scanner(System.in);
-      
+        
         Elevator[] elevators = new Elevator[2];
         Elevator elev = elevators[0];
+        
+        PassengerManager passengerManager = new PassengerManager(elevators);
       
         System.out.println("Welcome to the Elevator Simulator.");
         Controller control = new DefaultController(elev);
@@ -27,7 +29,7 @@ public class ElevSim {
         System.out.println("Passenger 1 is going to: " + destination);
         
         Passenger p1 = passengerManager.newPassenger();
-       Passenger p2 = passengerManager.newPassenger();
+        Passenger p2 = passengerManager.newPassenger();
         
         
         while(true)
