@@ -37,7 +37,7 @@ public class Passenger
    {
        if(!this.waiting)
        {
-           if(this.destinationFloor > elev.getCurrentFloor())
+           if(this.destinationFloor > this.startFloor)
            {
                System.out.println("Passenger on floor " + startFloor + " pushed Up.");
                elev.pushUp(this.startFloor);

@@ -153,8 +153,6 @@ public class Elevator {
       }
       public void stop() {
         this.stopped = true;
-        
-        System.out.println("Elevator stopped.");
 
         destinationFloors[currentFloor] = false;
         pushedUp[currentFloor] = false;
@@ -162,7 +160,6 @@ public class Elevator {
       }
 
       public boolean getStopped() {
-        System.out.println("ELEV STOPPED: " + this.stopped);
         return this.stopped;
       }
 

@@ -20,7 +20,7 @@ public class ElevSim {
         System.out.println("Welcome to the Elevator Simulator.");
         
         Passenger p1 = passengerManager.newPassenger();
-        //Passenger p2 = passengerManager.newPassenger();
+       Passenger p2 = passengerManager.newPassenger();
         
         while(true)
         {
