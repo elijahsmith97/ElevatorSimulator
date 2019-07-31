@@ -1,7 +1,9 @@
 public abstract class Controller
 {
    protected Elevator[] elevators;
-
+   protected boolean[] pushedUp;
+   protected boolean[] pushedDown;
+   
    /**
     * Editor: Elijah Smith
     * initialized size of new pushed fields.
