@@ -47,7 +47,7 @@ public class Passenger
            {    
                 //This will change when Passenger starts using Controller not Elevator
                //elev.pushDown(this.startFloor);
-               System.out.println("Passenger on floor " + startFloor + " pushed Down.")
+               System.out.println("Passenger on floor " + startFloor + " pushed Down.");
            }
            this.waiting = true;
        }
