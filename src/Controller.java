@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public abstract class Controller
 {
-   protected Elevator elevator;
+   protected ArrayList<Elevator> elevators;
 
-   protected Controller(Elevator elevator)
+   protected Controller(ArrayList<Elevator> elevators)
    {
-      this.elevator = elevator;
+      this.elevators = elevators;
    }
 
    public abstract void next();
