@@ -2,13 +2,6 @@ public abstract class Controller
 {
    protected Elevator[] elevators;
 
-   protected Controller(Elevator[] elevators)
-   {
-      this.elevators = elevators;
-   protected Elevator elevator;
-   protected boolean[] pushedUp;
-   protected boolean[] pushedDown;
-
    /**
     * Editor: Elijah Smith
     * initialized size of new pushed fields.
