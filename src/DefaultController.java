@@ -23,7 +23,7 @@ public class DefaultController extends Controller
       boolean pushDownFloors[] = elevator.getPushedDown();
 
       boolean pushTrue = elevator.pushTrue();
-      boolean destTrue = elevator.hasDestFloor();
+      int destFloorCount = elevator.hasDestFloors();
 
       if(currentFloor == 1 || currentFloor == maxFloor)
       {
@@ -31,11 +31,11 @@ public class DefaultController extends Controller
          movingDown = false;
       }
 
-      if(currentFloor == 1 && (destTrue || pushTrue))
+      if(currentFloor == 1 && (destFloorCount == 0 || pushTrue))
       {
          movingUp = true;
       }
-      else if (currentFloor == maxFloor && (destTrue || pushTrue))
+      else if (currentFloor == maxFloor && (destFloorCount == 0 || pushTrue))
       {
          movingDown = true;
       }
