@@ -78,9 +78,9 @@ public class Elevator {
     
         public boolean hasDestFloor()
     {
-        for(int loop = 0; loop < destinationFloors.length; loop++)
+        for(int loop = 0; loop < destinationFloor.length; loop++)
         {
-            if(destinationFloors[loop])
+            if(destinationFloor[loop])
                return true;
         }
 
@@ -134,8 +134,6 @@ public class Elevator {
       public void stop() {
         this.stopped = true;
         destinationFloor[currentFloor] = false;
-
-        destinationFloors[currentFloor] = false;
         pushedUp[currentFloor] = false;
         pushedDown[currentFloor] = false;
       }
