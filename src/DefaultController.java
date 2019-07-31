@@ -5,9 +5,9 @@ public class DefaultController extends Controller
    private boolean movingUp;
    private boolean movingDown;
    
-   public DefaultController(Elevator elevator)
+   public DefaultController(ArrayList <Elevator> elevators)
    {
-      super(elevator);
+      super(elevators);
 
       this.movingUp = false;
       this.movingDown = false;
