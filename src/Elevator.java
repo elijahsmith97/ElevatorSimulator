@@ -73,18 +73,6 @@ public class Elevator {
         return false;
     }
     
-    /**
-     * Author: Elijah Smith
-     * Issue #22 getter method
-     */ 
-      public boolean[] getPushedUp() {
-        return this.pushedUp;
-      }
-
-      public boolean[] getPushedDown() {
-        return this.pushedDown;
-      }
-     
       public int getCurrentFloor() {
         return this.currentFloor;
       }
@@ -101,21 +89,6 @@ public class Elevator {
         return this.numberOfFloors;
       }
 
-      /**
-       * Author: Elijah Smith
-       * Issue #67 pushedUp accessor
-       */ 
-      public boolean[] getPushedUpArray() {
-        return this.pushedUp;
-      }
-
-      /**
-       * Author: Elijah Smith
-       * Issue #67 pushedDown accessor
-       */ 
-      public boolean[] getPushedDownArray() {
-        return this.pushedDown;
-      }
       public void stop() {
         this.stopped = true;
         destinationFloors[currentFloor] = false;
