@@ -13,9 +13,11 @@ public class ElevSim {
         String stringDecision = "";
         int maxFloors = 100;
       
-        Elevator elev = new Elevator(maxFloors);
+        Elevator[] elevators = new Elevator[2];
+        Elevator elevator = Elevators[0];
+        
         PassengerManager passengerManager= new PassengerManager(elev);
-        Controller control = new DefaultController(elev);
+        Controller control = new DefaultController(elevators);
       
         System.out.println("Welcome to the Elevator Simulator.");
         
