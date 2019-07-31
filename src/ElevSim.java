@@ -11,7 +11,7 @@ public class ElevSim {
         char decision = 'u';
         int floorDecision = 1;
         String stringDecision = "";
-        int maxFloors = 100;
+        int maxFloors = 10;
       
         Elevator[] elevators = new Elevator[2];
         Elevator elevator = elevators[0];
@@ -22,14 +22,14 @@ public class ElevSim {
         System.out.println("Welcome to the Elevator Simulator.");
         
         Passenger p1 = passengerManager.newPassenger();
-        Passenger p2 = passengerManager.newPassenger();
+       Passenger p2 = passengerManager.newPassenger();
         
         while(true)
         {
-            passengerManager.next();
             control.next();
+           System.out.println(elevator.getCurrentFloor());
+            passengerManager.next();
 
-            System.out.println(elevator.getCurrentFloor());
         }
    }
 }
