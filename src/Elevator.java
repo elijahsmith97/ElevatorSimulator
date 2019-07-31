@@ -74,17 +74,16 @@ public class Elevator {
         }
         return false;
     }
-    
-    
-        public boolean hasDestFloor()
-    {
-        for(int loop = 0; loop < destinationFloor.length; loop++)
-        {
-            if(destinationFloor[loop])
-               return true;
-        }
 
-        return false;
+    public int hasDestFloors()
+    {
+        int count = 0;
+        for(int loop = 0; loop < destinationFloors.length; loop++)
+        {
+            if(destinationFloors[loop])
+               count++;
+        }
+        return count;
     }
     
     
