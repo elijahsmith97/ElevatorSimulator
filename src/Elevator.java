@@ -17,6 +17,8 @@ public class Elevator {
         destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
+
+        this.stopped = true;
     }
     /**
      * Author: Elijah Smith
@@ -28,6 +30,8 @@ public class Elevator {
         destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors + 1];
         pushedDown = new boolean[numberOfFloors + 1];
+
+        this.stopped = true;
     }
 
     /**
@@ -132,6 +136,8 @@ public class Elevator {
       public void stop() {
         this.stopped = true;
         destinationFloor[currentFloor] = false;
+
+        destinationFloors[currentFloor] = false;
         pushedUp[currentFloor] = false;
         pushedDown[currentFloor] = false;
       }
