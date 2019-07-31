@@ -8,7 +8,7 @@ public class ElevSim {
         
         Elevator[] elevators = new Elevator[2];
         int maxFloors = 10;
-        Elevators[0] = new Elevator(maxFloors);
+        elevators[0] = new Elevator(maxFloors);
         Elevator elev = elevators[0];
         
         PassengerManager passengerManager = new PassengerManager(elevators);
