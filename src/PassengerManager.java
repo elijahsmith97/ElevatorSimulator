@@ -8,7 +8,7 @@ public class PassengerManager
     
     public PassengerManager(Elevator[] elevators)
     {
-       this.elevator = elevator[0];
+       this.elevator = elevators[0];
        this.passengers = new ArrayList<Passenger>();
     }
     
