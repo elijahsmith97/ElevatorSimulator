@@ -1,15 +1,16 @@
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
 public class Elevator {
 
     private int currentFloor;
-    private boolean[] destinationFloors;
+    private boolean[] destinationFloor;
     private int numberOfFloors;
     private boolean[] pushedUp;
     private boolean[] pushedDown;
     private boolean stopped;
-
+    Elevator elev = new Elevator(10);
+    PassengerManager passengerManager= new PassengerManager(elev);
+    Controller control = new DefaultController(elev);
+    Passenger pass = new Passenger(elev, 0);
+    Timer time = new Timer(3000);
     /**
      * Author: Elijah Smith
      * Issue #61 new Constructor
@@ -17,10 +18,9 @@ public class Elevator {
     public Elevator(int numberOfFloors) {
         this.currentFloor = 1;
         this.numberOfFloors = numberOfFloors;
-        destinationFloors = new boolean[numberOfFloors+1];
+        destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
-
         this.stopped = true;
     }
     /**
@@ -29,12 +29,10 @@ public class Elevator {
      */ 
     public Elevator(int currentFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
-        this.numberOfFloors = numberOfFloors;
-         
-        destinationFloors = new boolean[numberOfFloors+1];
+        this.destinationFloor = destinationFloor;
+        destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors + 1];
         pushedDown = new boolean[numberOfFloors + 1];
-
         this.stopped = true;
     }
 
@@ -44,17 +42,9 @@ public class Elevator {
      * @throws Exception 
      */
     public void moveDown() {
+        time.run();
         currentFloor--;
         this.stopped = false;
-        
-        try {
-            Thread.sleep(3000);
-            System.out.println("Elevator going down... Floor: " + currentFloor);
-        } 
-        
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
     
    /**
@@ -62,17 +52,9 @@ public class Elevator {
     * Issue #57/51 moveUp
     */
     public void moveUp() {
+        time.run();
         currentFloor++;
         this.stopped = false;
-        
-        try {
-            Thread.sleep(3000);
-            System.out.println("Elevator going up... Floor: " + currentFloor);
-        } 
-        
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
     
     /**
@@ -100,14 +82,14 @@ public class Elevator {
     public int hasDestFloors()
     {
         int count = 0;
-        for(int loop = 0; loop < destinationFloors.length; loop++)
+        for(int loop = 0; loop < destinationFloor.length; loop++)
         {
-            if(destinationFloors[loop])
+            if(destinationFloor[loop])
                count++;
         }
-
         return count;
     }
+    
     
     /**
      * Author: Elijah Smith
@@ -126,11 +108,11 @@ public class Elevator {
       }
 
       public void addDestinationFloor(int currentFloor) {
-          destinationFloors[currentFloor] = true;
+          destinationFloor[currentFloor] = true;
       }
   
       public boolean[] getDestinationFloor() {
-        return this.destinationFloors;
+        return this.destinationFloor;
       }
       
       public int getNumberOfFloors() {
@@ -154,8 +136,7 @@ public class Elevator {
       }
       public void stop() {
         this.stopped = true;
-
-        destinationFloors[currentFloor] = false;
+        destinationFloor[currentFloor] = false;
         pushedUp[currentFloor] = false;
         pushedDown[currentFloor] = false;
       }
