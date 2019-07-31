@@ -11,8 +11,8 @@ public abstract class Controller
    protected Controller(Elevator[] elevators)
    {
       this.elevators = elevators;
-      pushedUp = new boolean[elevator.getNumberOfFloors() + 1];
-      pushedDown = new boolean[elevator.getNumberOfFloors() + 1];
+      pushedUp = new boolean[elevators[1].getNumberOfFloors() + 1];
+      pushedDown = new boolean[elevators[1].getNumberOfFloors() + 1];
    }
 
    public abstract void next();
