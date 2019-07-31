@@ -14,7 +14,7 @@ public class ElevSim {
         int maxFloors = 100;
       
         Elevator[] elevators = new Elevator[2];
-        Elevator elevator = Elevators[0];
+        Elevator elevator = elevators[0];
         
         PassengerManager passengerManager= new PassengerManager(elev);
         Controller control = new DefaultController(elevators);
@@ -29,7 +29,7 @@ public class ElevSim {
             passengerManager.next();
             control.next();
 
-            System.out.println(elev.getCurrentFloor());
+            System.out.println(elevator.getCurrentFloor());
         }
    }
 }
