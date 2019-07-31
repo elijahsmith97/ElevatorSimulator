@@ -28,8 +28,6 @@ public class Elevator {
         this.numberOfFloors = numberOfFloors;
         this.destinationFloor = new boolean[numberOfFloors+1];
         this.stopped = true;
-        pushedUp = new boolean[numberOfFloors + 1];
-        pushedDown = new boolean[numberOfFloors + 1];
     }
 
     /**
@@ -53,31 +51,6 @@ public class Elevator {
         this.stopped = false;
     }
    
-        /**
-    * Author: Erik Burr
-    * Issue #17 pushUp/pushDown
-    */
-    public void pushUp(int currentFloor){
-        pushedUp[currentFloor] = true;   
-    }
-             
-    public void pushDown(int currentFloor){
-        pushedDown[currentFloor] = true;  
-    }
-    
-    
-    
-        public int pushTrue()
-    {
-        int counter = 0;
-        for(int loop = 0; loop < pushedUp.length; loop++)
-        {
-            if(pushedUp[loop] || pushedDown[loop])
-               counter++;
-        }
-        return counter;
-    }
-    
     public int hasDestFloors()
     {
         int count = 0;
