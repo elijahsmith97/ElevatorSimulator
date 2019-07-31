@@ -16,8 +16,6 @@ public class ElevSim {
         System.out.println("Welcome to the Elevator Simulator.");
         Controller control = new DefaultController(elevators);
         
-        PassengerManager passengerManager= new PassengerManager(elevators);
-        Controller control = new DefaultController(elevators);
         Passenger pass = new Passenger(elev, 0);
         
         System.out.println("Welcome to the Elevator Simulator.\n\nElevator is currently on: " + elev.getCurrentFloor());
