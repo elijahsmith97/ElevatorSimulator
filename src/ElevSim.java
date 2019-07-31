@@ -11,8 +11,13 @@ public class ElevSim {
         Elevator elev = new Elevator(maxFloors);
         PassengerManager passengerManager= new PassengerManager(elev);
         Controller control = new DefaultController(elev);
+        Passenger pass = new Passenger(elev, 0);
       
         System.out.println("Welcome to the Elevator Simulator.\n\nElevator is currently on: " + elev.getCurrentFloor());
+        System.out.println("\nPassenger 1, which floor would you like to go?");
+        int destination = kb.nextInt();
+        pass.setDestinationFloor(destination);
+        System.out.println("Passenger 1 is going to: " + destination);
         
         Passenger p1 = passengerManager.newPassenger();
         Passenger p2 = passengerManager.newPassenger();
@@ -21,10 +26,7 @@ public class ElevSim {
         while(true)
         {
             passengerManager.next();
-            control.next();
-            System.out.println("\nPassenger 1 is on floor " + p1.getDestinationFloor());
-            System.out.println("Passenger 2 is on floor " + p2.getDestinationFloor());
-            
+            control.next(); 
             System.out.println("\nElevator is currently on: " + elev.getCurrentFloor());
             
         }
