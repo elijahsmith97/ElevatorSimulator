@@ -92,8 +92,6 @@ public class Elevator {
       public void stop() {
         this.stopped = true;
         destinationFloors[currentFloor] = false;
-        pushedUp[currentFloor] = false;
-        pushedDown[currentFloor] = false;
       }
 
       public boolean getStopped() {
