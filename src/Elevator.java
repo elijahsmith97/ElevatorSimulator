@@ -7,7 +7,6 @@ public class Elevator {
     private boolean[] pushedDown;
     private boolean stopped;
     Elevator elev = new Elevator(10);
-    Controller control = new DefaultController(elev);
     Passenger pass = new Passenger(elev, 0);
     Timer time = new Timer(3000);
     /**
