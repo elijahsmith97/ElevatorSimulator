@@ -1,26 +1,23 @@
-package solution;
 import java.util.Scanner; 
 
 public class ElevSim {
     
-
+    
     public static void main(String[] args) throws InterruptedException {
-
-        int maxFloors = 10;
-        Scanner kb = new Scanner(System.in);
-      
         int elevCurrent = 1;
         int passDestination = 1;
         int passCurrent = 1;
         char decision = 'u';
         int floorDecision = 1;
         String stringDecision = "";
+        int maxFloors = 10;
+        Scanner kb = new Scanner(System.in);
       
         Elevator elev = new Elevator(maxFloors);
         PassengerManager passengerManager= new PassengerManager(elev);
         Controller control = new DefaultController(elev);
         Passenger pass = new Passenger(elev, 0);
-      
+        
         System.out.println("Welcome to the Elevator Simulator.\n\nElevator is currently on: " + elev.getCurrentFloor());
         System.out.println("\nPassenger 1, which floor would you like to go?");
         int destination = kb.nextInt();
