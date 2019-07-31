@@ -51,6 +51,31 @@ public class Elevator {
         this.stopped = false;
     }
    
+        /**
+    * Author: Erik Burr
+    * Issue #17 pushUp/pushDown
+    */
+    public void pushUp(int currentFloor){
+        pushedUp[currentFloor] = true;   
+    }
+             
+    public void pushDown(int currentFloor){
+        pushedDown[currentFloor] = true;  
+    }
+    
+    
+    
+        public int pushTrue()
+    {
+        int counter = 0;
+        for(int loop = 0; loop < pushedUp.length; loop++)
+        {
+            if(pushedUp[loop] || pushedDown[loop])
+               counter++;
+        }
+        return counter;
+    }
+    
     public int hasDestFloors()
     {
         int count = 0;
