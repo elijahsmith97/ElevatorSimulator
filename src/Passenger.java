@@ -26,11 +26,13 @@ public class Passenger
        {
            if(this.destinationFloor > elev.getCurrentFloor())
            {
-               elev.pushUp(this.startFloor);
+               //This will change when Passenger starts using Controller not Elevator
+               //elev.pushUp(this.startFloor);
            }
            else
-           {
-               elev.pushDown(this.startFloor);
+           {    
+                //This will change when Passenger starts using Controller not Elevator
+               //elev.pushDown(this.startFloor);
            }
            this.waiting = true;
        }
