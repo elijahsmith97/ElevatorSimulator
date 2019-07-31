@@ -26,6 +26,19 @@ public class DefaultController extends Controller
 
       int destFloorCount = elevator.hasDestFloors();
 
+
+    public int pushTrue()
+    {
+        int counter = 0;
+        for(int loop = 0; loop < pushedUp.length; loop++)
+        {
+            if(pushedUp[loop] || pushedDown[loop])
+               counter++;
+        }
+        return counter;
+    }
+
+
       if(currentFloor == 1 || currentFloor == maxFloor)
       {
          movingUp = false;
