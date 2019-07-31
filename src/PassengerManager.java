@@ -6,9 +6,9 @@ public class PassengerManager
     private Elevator elevator;    
     private ArrayList<Passenger> passengers;
     
-    public PassengerManager(Elevator elevator)
+    public PassengerManager(Elevator[] elevators)
     {
-       this.elevator = elevator;
+       this.elevator = elevator[0];
        this.passengers = new ArrayList<Passenger>();
     }
     
