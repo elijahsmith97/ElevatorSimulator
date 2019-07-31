@@ -5,7 +5,7 @@ public class ElevSim {
     
     public static void main(String[] args) throws InterruptedException {
         Scanner kb = new Scanner(System.in);
-      
+        int maxFloors = 10;
         Elevator elev = new Elevator(maxFloors);
         PassengerManager passengerManager= new PassengerManager(elev);
         Controller control = new DefaultController(elev);
