@@ -17,7 +17,6 @@ public class Elevator {
         destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
-
         this.stopped = true;
     }
     /**
@@ -30,7 +29,6 @@ public class Elevator {
         destinationFloor = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors + 1];
         pushedDown = new boolean[numberOfFloors + 1];
-
         this.stopped = true;
     }
 
@@ -42,7 +40,7 @@ public class Elevator {
     public void moveDown() {
         time.run();
         currentFloor--;
-        stopped = false;
+        this.stopped = false;
     }
     
    /**
@@ -52,7 +50,7 @@ public class Elevator {
     public void moveUp() {
         time.run();
         currentFloor++;
-        stopped = false;
+        this.stopped = false;
     }
     
     /**
