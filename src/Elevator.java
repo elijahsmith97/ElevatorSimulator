@@ -20,6 +20,8 @@ public class Elevator {
         destinationFloors = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
+
+        this.stopped = true;
     }
     /**
      * Author: Elijah Smith
@@ -32,6 +34,8 @@ public class Elevator {
         destinationFloors = new boolean[numberOfFloors+1];
         pushedUp = new boolean[numberOfFloors + 1];
         pushedDown = new boolean[numberOfFloors + 1];
+
+        this.stopped = true;
     }
 
     /**
@@ -41,10 +45,11 @@ public class Elevator {
      */
     public void moveDown() {
         currentFloor--;
-        stopped = false;
+        this.stopped = false;
+        
         try {
             Thread.sleep(3000);
-            System.out.println("Elevator going down...");
+            System.out.println("Elevator going down... Floor: " + currentFloor);
         } 
         
         catch (InterruptedException e) {
@@ -58,10 +63,11 @@ public class Elevator {
     */
     public void moveUp() {
         currentFloor++;
-        stopped = false;
+        this.stopped = false;
+        
         try {
             Thread.sleep(3000);
-            System.out.println("Elevator going up...");
+            System.out.println("Elevator going up... Floor: " + currentFloor);
         } 
         
         catch (InterruptedException e) {
@@ -147,6 +153,7 @@ public class Elevator {
       }
       public void stop() {
         this.stopped = true;
+
         destinationFloors[currentFloor] = false;
         pushedUp[currentFloor] = false;
         pushedDown[currentFloor] = false;
