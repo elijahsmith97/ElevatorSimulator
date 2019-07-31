@@ -234,11 +234,11 @@ public class Tests implements TimerClient
    {
       Elevator elev = new Elevator(1, 10);
       
-      assertEquals(false, elev.hasDestFloor());
+      assertEquals(0, elev.hasDestFloors());
       
       elev.addDestinationFloor(7);
       
-      assertEquals(true, elev.hasDestFloor());  
+      assertEquals(1, elev.hasDestFloors());  
    }
 
 
