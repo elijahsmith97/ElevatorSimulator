@@ -6,8 +6,6 @@ public class Elevator {
     private int currentFloor;
     private boolean[] destinationFloors;
     private int numberOfFloors;
-    private boolean[] pushedUp;
-    private boolean[] pushedDown;
     private boolean stopped;
 
     /**
@@ -18,9 +16,7 @@ public class Elevator {
         this.currentFloor = 1;
         this.numberOfFloors = numberOfFloors;
         destinationFloors = new boolean[numberOfFloors+1];
-        pushedUp = new boolean[numberOfFloors+1];
-        pushedDown = new boolean[numberOfFloors+1];
-    }
+   }
     /**
      * Author: Elijah Smith
      * Issue #18 Constructor
@@ -30,9 +26,7 @@ public class Elevator {
         this.numberOfFloors = numberOfFloors;
          
         destinationFloors = new boolean[numberOfFloors+1];
-        pushedUp = new boolean[numberOfFloors + 1];
-        pushedDown = new boolean[numberOfFloors + 1];
-    }
+   }
 
     /**
      * Author: Elijah Smith
@@ -69,18 +63,6 @@ public class Elevator {
         }
     }
     
-    /**
-    * Author: Erik Burr
-    * Issue #17 pushUp/pushDown
-    */
-    public void pushUp(int currentFloor){
-        pushedUp[currentFloor] = true;   
-    }
-             
-    public void pushDown(int currentFloor){
-        pushedDown[currentFloor] = true;  
-    }
-
     public boolean pushTrue()
     {
         for(int loop = 0; loop < pushedUp.length; loop++)
