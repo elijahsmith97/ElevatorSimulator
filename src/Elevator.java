@@ -80,7 +80,7 @@ public class Elevator {
 
       public void stop() {
         this.stopped = true;
-        destinationFloors[currentFloor] = false;
+        destinationFloor[currentFloor] = false;
       }
 
       public boolean getStopped() {
