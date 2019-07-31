@@ -24,7 +24,6 @@ public class Elevator {
     public Elevator(int currentFloor, int numberOfFloors) {
         this.currentFloor = currentFloor;
         this.numberOfFloors = numberOfFloors;
-         
         destinationFloors = new boolean[numberOfFloors+1];
    }
 
@@ -63,16 +62,6 @@ public class Elevator {
         }
     }
     
-    public boolean pushTrue()
-    {
-        for(int loop = 0; loop < pushedUp.length; loop++)
-        {
-            if(pushedUp[loop] || pushedDown[loop])
-               return true;
-        }
-        return false;
-    }
-
     public boolean hasDestFloor()
     {
         for(int loop = 0; loop < destinationFloors.length; loop++)

@@ -18,7 +18,7 @@ public abstract class Controller
    public abstract void next();
     
     /**
-     * Author: Elijah Smith
+     * Editor: Elijah Smith
      * Issue #108 moving this method from Elevator
      */ 
     public void pushUp(int currentFloor) {
@@ -26,10 +26,22 @@ public abstract class Controller
     }
 
     /**
-     * Author: Elijah Smith
+     * Editor: Elijah Smith
      * Issue #108 moving this method from Elevator
      */ 
     public void pushDown(int currentFloor) {
         pushedDown[currentFloor] = true;
+    }
+
+    /**
+     * Editor: Elijah Smith
+     * Issue #108 moving this method from Elevator
+     */ 
+    public boolean pushTrue() {
+        for(int loop = 0; loop < pushedUp.length; loop++) {
+            if(pushedUp[loop] || pushedDown[loop])
+                return true;
+        }
+        return false;
     }
 }
