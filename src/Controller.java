@@ -15,8 +15,20 @@ public abstract class Controller
       pushedDown = new boolean[elevators[1].getNumberOfFloors() + 1];
    }
 
+   
    public abstract void next();
-          /**
+
+   public int pushTrue()
+   {
+        int counter = 0;
+        for(int loop = 0; loop < pushedUp.length; loop++)
+        {
+            if(pushedUp[loop] || pushedDown[loop])
+               counter++;
+        }
+        return counter;
+   }
+     /**
      * Editor: Elijah Smith
      * Issue #108 moving this method from Elevator
      */ 
@@ -30,17 +42,5 @@ public abstract class Controller
      */ 
     public void pushDown(int currentFloor) {
         pushedDown[currentFloor] = true;
-    }
-
-    /**
-     * Editor: Elijah Smith
-     * Issue #108 moving this method from Elevator
-     */ 
-    public boolean pushTrue() {
-        for(int loop = 0; loop < pushedUp.length; loop++) {
-            if(pushedUp[loop] || pushedDown[loop])
-                return true;
-        }
-        return false;
     }
 }
