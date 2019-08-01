@@ -14,10 +14,9 @@ public abstract class Controller
       pushedUp = new boolean[elevators[1].getNumberOfFloors() + 1];
       pushedDown = new boolean[elevators[1].getNumberOfFloors() + 1];
    }
-
-   
+ 
    public abstract void next();
-
+  
    public int pushTrue()
    {
         int counter = 0;
@@ -43,4 +42,9 @@ public abstract class Controller
     public void pushDown(int currentFloor) {
         pushedDown[currentFloor] = true;
     }
+  
+   public Elevator[] getElevators()
+   {
+      return elevators;
+   }
 }
