@@ -129,7 +129,7 @@ public class Tests implements TimerClient
     */ 
     @Test
     public void testPushUp() {
-        Controller control = new DefaultController(10, 2)
+        Controller control = new DefaultController(10, 2);
         control.pushUp(0);
         control.pushUp(2);
         control.pushUp(3);
@@ -150,7 +150,7 @@ public class Tests implements TimerClient
     */ 
     @Test
     public void testPushDown() {
-        Controller control = new DefaultController(10, 2)
+        Controller control = new DefaultController(10, 2);
         control.pushDown(5);
         control.pushDown(7);
         control.pushDown(3);
