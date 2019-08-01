@@ -69,6 +69,16 @@ public class Passenger
        return this.waiting;
    }
 
+   public boolean getRiding()
+   {
+      return this.riding;
+   }
+
+   public boolean getDone()
+   {
+      return this.done;
+   }
+
    public int getStartFloor()
    {
       return this.startFloor;

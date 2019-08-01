@@ -223,36 +223,7 @@ public class Tests implements TimerClient
       assertEquals(true, elev.pushTrue());      
    }
 */  
-     @Test 
-   public void testdisplay1()
-   {
-      Elevator[] elevators = new Elevator[2];
-      elevators[0] = new Elevator(1, 10);
-      PassengerManager passman = new PassengerManager(elevators);
-      Display disp = new Display(passman, elevators[0]);
-      disp.goingUp();
-      disp.goingDown();
 
-      assertEquals(Display.current, 1);
-   }
-   
-
-   @Test 
-   public void testdisplay2()
-   {
-      Elevator[] elevators = new Elevator[2];
-      elevators[0] = new Elevator(1, 10);
-      PassengerManager passman = new PassengerManager(elevators);
-      Display disp = new Display(passman, elevators[0]);
-      disp.goingUp();
-      disp.goingUp();
-      disp.goingUp();
-      disp.goingUp();
-      disp.goingUp();
-      
-      assertEquals(Display.current, 6);
-   }
-   
    @Test
    public void testHasDestFloor()
    {

@@ -1,56 +1,89 @@
-/*
-*
-* Author: Matthew Frankel
-* Issue 56
-* */
+import java.util.ArrayList;
 
 public class Display 
 {
-   static Elevator el = new Elevator(100);
-   PassengerManager pm;
-   Timer time = new Timer(3000);
-   Timer time2 = new Timer(2000);
-   public static int current = el.getCurrentFloor();
+   private PassengerManager passengerManager;
+   private Controller control;
 
-   public Display(PassengerManager pm, Elevator el) 
+   public Display(PassengerManager passengerManager, Controller control) 
    {   
-       this.pm = pm;
-       this.el = el;
+       this.passengerManager = passengerManager;
+       this.control = control;
+
+       start();
    }
    
    public void display()
-   {
-      start();
-      goingUp();
-      goingDown();
+   { 
+      System.out.println("=============================================================");
+      
+      ArrayList<Passenger> passengers = passengerManager.getPassengers();
+      for(int loop = 0; loop < passengers.size(); loop++)
+      {
+         Passenger passenger = passengers.get(loop);
+         printPassenger(loop, passenger);
+      }
+      
+      System.out.println("=============================================================");
+      
+      Elevator[] elevators = control.getElevators();
+      for(int loop = 0; loop < elevators.length; loop++)
+      {
+         printElevator(loop, elevators[loop]);
+         System.out.println("=============================================================");
+      }
+
+      System.out.println("=============================================================\n\n");
    }
    
    public void start()
    {
        System.out.println("Welcome to our Elevator Simulation:\n  (Enter Ctrl+C to exit simulation) \n\n\n");
-       time2.run();
-       System.out.println("The doors are opening...\n");
-       time2.run();
-   }
-   
-   public void goingUp()
-   {
-       System.out.println("\nGoing up to floor " + (current + 1) + "\n");
-       time.run();
-       System.out.print("\007");
-       current++;
-   }
-   
-   public void goingDown()
-   {   
-       System.out.println("\nGoing down to floor " + (current - 1) + "\n");
-       time.run();
-       System.out.print("\007");
-       current--;
    }
 
-   public void displayCurrentFloor()
+   public void printPassenger(int number, Passenger passenger)
    {
-       System.out.println("Elevator is currently on floor " + current);
+         if(passenger.getWaiting())
+         {
+            System.out.print("Passenger " + number + " is on Floor " + passenger.getStartFloor());
+            
+            if(passenger.getStartFloor() > passenger.getDestinationFloor())
+            {
+               System.out.println(" waiting to go down.");
+            }
+            else
+            {
+               System.out.println(" waiting to go up.");
+            }
+         }
+   }
+
+   public void printElevator(int number, Elevator elevator)
+   {
+      if(elevator.getStopped())
+      {
+         System.out.println("Elevator " + number + " has stopped on Floor " + elevator.getCurrentFloor());
+         System.out.println("Elevator doors have opened.");
+
+         ArrayList<Passenger> passengers = passengerManager.getPassengers();
+         for(int loop = 0; loop < passengers.size(); loop++)
+         {
+            Passenger passenger = passengers.get(loop);
+
+            if(elevator.getCurrentFloor() == passenger.getStartFloor() && passenger.getRiding())
+            {
+               System.out.println("Passenger " + loop + " has boarded the elevator.");
+            }
+            else if(elevator.getCurrentFloor() == passenger.getDestinationFloor() && passenger.getDone())
+            {
+               System.out.println("Passenger " + loop + " has left the elevator.");
+            }
+
+         }
+      }
+      else
+      {
+         System.out.println("Elevator " + number + " is on Floor " + elevator.getCurrentFloor());
+      }
    }
 }
