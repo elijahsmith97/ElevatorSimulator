@@ -201,7 +201,7 @@ public class Tests implements TimerClient
       assertEquals(true, elev.pushTrue());      
    }
 */  
-  
+
    @Test
    public void testHasDestFloor()
    {

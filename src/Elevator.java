@@ -5,6 +5,7 @@ public class Elevator {
     private int numberOfFloors;
     private boolean stopped;
     private Timer time = new Timer(3000);
+  
     /**
      * Author: Elijah Smith
      * Issue #61 new Constructor
