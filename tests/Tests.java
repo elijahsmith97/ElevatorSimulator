@@ -122,6 +122,51 @@ public class Tests implements TimerClient
         assertEquals(elev2, elev4);    
    }
    
+   
+   /**
+    * Author: Elijah Smith
+    * pushUp() method test now in Controller
+    */ 
+    @Test
+    public void testPushUp() {
+        Controller control = new DefaultController(10, 2)
+        control.pushUp(0);
+        control.pushUp(2);
+        control.pushUp(3);
+
+        boolean[] pushedUpArray = control.getPushedUpArray();
+        boolean pushedUp1 = pushedUpArray[0];
+        boolean pushedUp2 = pushedUpArray[2];
+        boolean pushedUp3 = pushedUpArray[3];
+
+        assertEquals(true, pushedUp1);
+        assertEquals(true, pushedUp2);
+        assertEqausl(true, pushedUp3);
+    }
+
+   /**
+    * Author: Elijah Smith
+    * pushDown() method test now in Controller
+    */ 
+    @Test
+    public void testPushDown() {
+        Controller control = new DefaultController(10, 2)
+        control.pushDown(5);
+        control.pushDown(7);
+        control.pushDown(3);
+
+        boolean[] pushedUpArray = control.getPushedUpArray();
+        boolean pushedDown1 = pushedUpArray[5];
+        boolean pushedDown2 = pushedUpArray[7];
+        boolean pushedDown3 = pushedUpArray[3];
+
+        assertEquals(true, pushedDown1);
+        assertEquals(true, pushedDown2);
+        assertEqausl(true, pushedDown3);
+    }
+
+   
+   
     
     /**
      * Author: Elijah Smith
