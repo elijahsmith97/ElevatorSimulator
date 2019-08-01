@@ -4,9 +4,8 @@ public class Elevator {
     private boolean[] destinationFloor;
     private int numberOfFloors;
     private boolean stopped;
-    Elevator elev = new Elevator(10);
-    Passenger pass = new Passenger(elev, 0);
-    Timer time = new Timer(3000);
+    private Timer time = new Timer(3000);
+  
     /**
      * Author: Elijah Smith
      * Issue #61 new Constructor
@@ -60,7 +59,6 @@ public class Elevator {
         }
         return count;
     }
-    
 
       public int getCurrentFloor() {
         return this.currentFloor;

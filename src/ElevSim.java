@@ -4,18 +4,18 @@ public class ElevSim {
     
     
     public static void main(String[] args) throws InterruptedException {
-        int elevCurrent = 1;
-        int passDestination = 1;
-        int passCurrent = 1;
-        char decision = 'u';
-        int floorDecision = 1;
-        String stringDecision = "";
-        int maxFloors = 10;
         Scanner kb = new Scanner(System.in);
+        
+        Elevator[] elevators = new Elevator[2];
+        int maxFloors = 10;
+        elevators[0] = new Elevator(maxFloors);
+        Elevator elev = elevators[0];
+        
+        PassengerManager passengerManager = new PassengerManager(elevators);
       
-        Elevator elev = new Elevator(maxFloors);
-        PassengerManager passengerManager= new PassengerManager(elev);
-        Controller control = new DefaultController(elev);
+        System.out.println("Welcome to the Elevator Simulator.");
+        Controller control = new DefaultController(elevators);
+        
         Passenger pass = new Passenger(elev, 0);
         
         System.out.println("Welcome to the Elevator Simulator.\n\nElevator is currently on: " + elev.getCurrentFloor());
@@ -25,7 +25,7 @@ public class ElevSim {
         System.out.println("Passenger 1 is going to: " + destination);
         
         Passenger p1 = passengerManager.newPassenger();
-       Passenger p2 = passengerManager.newPassenger();
+        Passenger p2 = passengerManager.newPassenger();
         
         
         while(true)
@@ -33,7 +33,6 @@ public class ElevSim {
             passengerManager.next();
             control.next(); 
             System.out.println("\nElevator is currently on: " + elev.getCurrentFloor());
-            
         }
    }
 }
