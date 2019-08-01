@@ -43,4 +43,9 @@ public abstract class Controller
     public void pushDown(int currentFloor) {
         pushedDown[currentFloor] = true;
     }
+   
+    public Elevator[] getElevators()
+    {
+       return elevators;
+    }
 }
