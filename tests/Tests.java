@@ -101,20 +101,6 @@ public class Tests implements TimerClient
             }
         }
    
-   /**
-    * Author: Elijah Smith
-    * test for getElevators() method
-    */ 
-   @Test
-   public void testGetElevators() {
-        Controller control = new DefaultController(10, 2);
-
-        Elevator[] elevArray2 = control.getElevators();
-
-        assertEquals(elevArray, elevArray2);     
-   }
-   
-    
     /**
      * Author: Elijah Smith
      * test brought from TimerTest.java
