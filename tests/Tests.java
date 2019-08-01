@@ -206,7 +206,7 @@ public class Tests implements TimerClient
    {
       Elevator[] elevators = new Elevator[2];
       elevators[0] = new Elevator(1, 10);
-      Controller control = new DefaultController();
+      Controller control = new Controller();
       PassengerManager passman = new PassengerManager(control);
       Display disp = new Display(passman, elevators[0]);
       disp.goingUp();
@@ -221,7 +221,7 @@ public class Tests implements TimerClient
    {
       Elevator[] elevators = new Elevator[2];
       elevators[0] = new Elevator(1, 10);
-      Controller control = new DefaultController();
+      Controller control = new Controller();
       PassengerManager passman = new PassengerManager(control);
       Display disp = new Display(passman, elevators[0]);
       disp.goingUp();
