@@ -7,12 +7,10 @@ public class DefaultController extends Controller
    private boolean movingDown;
    private Elevator elevator;
    
-   public DefaultController(Elevator[] elevators)
+   public DefaultController(int numberOfFloors, int numberOfElevators)
    {
-      super(elevators);
+      super(numberOfFloors, numberOfElevators);
       
-      elevator = elevators[0];
-
       this.movingUp = false;
       this.movingDown = false;
    }
