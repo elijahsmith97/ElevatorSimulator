@@ -19,4 +19,9 @@ public abstract class Controller
    public abstract void pushUp(int currentFloor);
    public abstract void pushDown(int currentFloor);
    public abstract boolean pushTrue();
+
+   public Elevator[] getElevators()
+   {
+      return elevators;
+   }
 }
