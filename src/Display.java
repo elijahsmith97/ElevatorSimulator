@@ -18,7 +18,7 @@ public class Display
       System.out.println("=============================================================");
       
       ArrayList<Passenger> passengers = passengerManager.getPassengers();
-      for(int loop = 0; loop < elevators.size(); loop++)
+      for(int loop = 0; loop < passengers.size(); loop++)
       {
          Passenger passenger = passengers.get(loop);
          printPassenger(loop, passenger);
@@ -43,9 +43,9 @@ public class Display
 
    public void printPassenger(int number, Passenger passenger)
    {
-         if(passenger.getWaiting()
+         if(passenger.getWaiting())
          {
-            System.out.print("Passenger " + loop + " is on Floor " + passenger.getStartFloor());
+            System.out.print("Passenger " + number + " is on Floor " + passenger.getStartFloor());
             
             if(passenger.getStartFloor() > passenger.getDestinationFloor())
             {
@@ -66,7 +66,7 @@ public class Display
          System.out.println("Elevator doors have opened.");
 
          ArrayList<Passenger> passengers = passengerManager.getPassengers();
-         for(int loop = 0; loop < passengerManager.size(); loop++)
+         for(int loop = 0; loop < passengers.size(); loop++)
          {
             Passenger passenger = passengers.get(loop);
 
