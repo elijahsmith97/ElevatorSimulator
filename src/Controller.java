@@ -17,8 +17,7 @@ public abstract class Controller
 
    
    public abstract void next();
-   public abstract void pushUp(int currentFloor);
-   public abstract void pushDown(int currentFloor);
+
    public int pushTrue()
    {
         int counter = 0;
@@ -29,4 +28,19 @@ public abstract class Controller
         }
         return counter;
    }
+     /**
+     * Editor: Elijah Smith
+     * Issue #108 moving this method from Elevator
+     */ 
+    public void pushUp(int currentFloor) {
+        pushedUp[currentFloor] = true;    
+    }
+
+    /**
+     * Editor: Elijah Smith
+     * Issue #108 moving this method from Elevator
+     */ 
+    public void pushDown(int currentFloor) {
+        pushedDown[currentFloor] = true;
+    }
 }
