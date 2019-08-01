@@ -110,11 +110,16 @@ public class Tests implements TimerClient
         Elevator elev1 = new Elevator(10);
         Elevator elev2 = new Elevator(10);
         Elevator[] elevArray = new Elevator[10];
+        elevArray[0] = elev1;
+        elevArray[1] = elev2;
         Controller control = new DefaultController(elevArray);
 
         Elevator[] elevArray2 = control.getElevators();
+        Elevator elev3 = elevArray2[0];
+        Elevator elev4 = elevArray2[1];
 
-        assertEquals(elevArray, elevArray2);     
+        assertEquals(elev1, elev3); 
+        assertEquals(elev2, elev4);    
    }
    
     
