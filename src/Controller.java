@@ -19,5 +19,14 @@ public abstract class Controller
    public abstract void next();
    public abstract void pushUp(int currentFloor);
    public abstract void pushDown(int currentFloor);
-   public abstract int pushTrue();
+   public int pushTrue()
+   {
+        int counter = 0;
+        for(int loop = 0; loop < pushedUp.length; loop++)
+        {
+            if(pushedUp[loop] || pushedDown[loop])
+               counter++;
+        }
+        return counter;
+   }
 }
