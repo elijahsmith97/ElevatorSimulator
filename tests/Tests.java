@@ -166,8 +166,6 @@ public class Tests implements TimerClient
     }
 
    
-   
-    
     /**
      * Author: Elijah Smith
      * test brought from TimerTest.java
