@@ -1,6 +1,6 @@
 public class Passenger
 {
-   private Elevator elev;
+   private Controller control;
 
    private int startFloor;
    private int destinationFloor;
@@ -9,9 +9,9 @@ public class Passenger
    private boolean riding;
    private boolean done;
    
-   public Passenger(Elevator elev, int startFloor, int destinationFloor)
+   public Passenger(Controller control, int startFloor, int destinationFloor)
    {
-      this.elev = elev;
+      this.control = control;
 
       this.startFloor = startFloor;
       this.destinationFloor = destinationFloor;
@@ -21,9 +21,9 @@ public class Passenger
       this.done = false;
    }
 
-   public Passenger(Elevator elev, int destinationFloor)
+   public Passenger(Controller control, int destinationFloor)
    {
-      this.elev = elev;
+      this.control = control;
       
       this.startFloor = 1;
       this.destinationFloor = destinationFloor;
@@ -39,28 +39,32 @@ public class Passenger
        {
            if(this.destinationFloor > this.startFloor)
            {
-               //This will change when Passenger starts using Controller not Elevator
-               //elev.pushUp(this.startFloor);
-                System.out.println("Passenger on floor " + startFloor + " pushed Up.");
+               control.pushUp(this.startFloor);
            }
            else
            {    
-                //This will change when Passenger starts using Controller not Elevator
-               //elev.pushDown(this.startFloor);
-               System.out.println("Passenger on floor " + startFloor + " pushed Down.");
+               control.pushDown(this.startFloor);
            }
            this.waiting = true;
        }
-       else if(waiting && !riding && elev.getStopped() && elev.getCurrentFloor() == startFloor)
+       else
        {
-           System.out.println("Passenger boarded elevator and pushed floor " + destinationFloor + ".");
-           elev.addDestinationFloor(destinationFloor);
-           this.riding = true;
-       }
-       else if(elev.getStopped() && elev.getCurrentFloor() == destinationFloor)
-       {
-           System.out.println("Passenger got off.");
-           this.done = true;
+           Elevator[] elevators = control.getElevators();
+           for(int loop = 0; loop < elevators.length; loop++)
+           {
+               Elevator elev = elevators[loop];
+               if(waiting && !riding && elev.getStopped() && elev.getCurrentFloor() == startFloor)
+               {
+                  elev.addDestinationFloor(destinationFloor);
+                  this.riding = true;
+                  break;
+               }
+               else if(elev.getStopped() && elev.getCurrentFloor() == destinationFloor)
+               {
+                  this.done = true;
+                  break;
+               }
+           }
        }
    }
 
