@@ -80,14 +80,6 @@ public class DefaultController extends Controller
      * Editor: Elijah Smith
      * Issue #108 moving this method from Elevator
      */ 
-    public int pushTrue()
-    {
-        int counter = 0;
-        for(int loop = 0; loop < pushedUp.length; loop++)
-        {
-            if(pushedUp[loop] || pushedDown[loop])
-               counter++;
-        }
-        return counter;
+
     }
 }
