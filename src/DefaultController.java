@@ -75,11 +75,4 @@ public class DefaultController extends Controller
     public void pushDown(int currentFloor) {
         pushedDown[currentFloor] = true;
     }
-
-    /**
-     * Editor: Elijah Smith
-     * Issue #108 moving this method from Elevator
-     */ 
-
-    }
 }
