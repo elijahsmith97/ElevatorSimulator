@@ -236,7 +236,7 @@ public class Tests implements TimerClient
       assertEquals(1, elev.hasDestFloors());  
    }
 
-
+   @Test
      public void testpushTrue()
    {
       Elevator[] elevators = new Elevator[2];
