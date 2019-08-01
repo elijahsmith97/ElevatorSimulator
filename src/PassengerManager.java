@@ -9,7 +9,7 @@ public class PassengerManager
     
     public PassengerManager(Controller control)
     {
-       this.control = new DefaultController();
+       this.control = control;
        this.passengers = new ArrayList<Passenger>();
     }
     
