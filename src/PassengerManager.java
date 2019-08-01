@@ -5,11 +5,11 @@ public class PassengerManager
 {
     private Elevator elevator;    
     private ArrayList<Passenger> passengers;
-    private Controller control;
+    private DefaultController control;
     
-    public PassengerManager(Controller control)
+    public PassengerManager(DefaultController control)
     {
-       this.control = new Controller();
+       this.control = new DefaultController();
        this.passengers = new ArrayList<Passenger>();
     }
     
