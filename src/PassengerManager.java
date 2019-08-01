@@ -20,7 +20,7 @@ public class PassengerManager
         
         while (dest == start) 
         {
-            dest = rand.nextInt(elevator.getNumberOfFloors()) + 1;
+            dest = rand.nextInt(control.getNumberOfFloors()) + 1;
         }
 
         Passenger newPass = new Passenger(control, start, dest);

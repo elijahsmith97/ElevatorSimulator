@@ -1,5 +1,6 @@
 public abstract class Controller
 {
+   protected int numberOfFloors;
    protected Elevator[] elevators;
    protected boolean[] pushedUp;
    protected boolean[] pushedDown;
@@ -10,6 +11,8 @@ public abstract class Controller
     */  
    protected Controller(int numberOfFloors, int numberOfElevators)
    {
+      this.numberOfFloors = numberOfFloors;
+      
       this.elevators = new Elevator[numberOfElevators];
       for(int loop = 0; loop < numberOfElevators; loop++)
       {
@@ -46,6 +49,11 @@ public abstract class Controller
      */ 
     public void pushDown(int currentFloor) {
         pushedDown[currentFloor] = true;
+   }
+
+   public int getNumberOfFloors()
+   {
+      return numberOfFloors;
    }
   
    public Elevator[] getElevators()
