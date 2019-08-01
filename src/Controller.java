@@ -47,4 +47,20 @@ public abstract class Controller
    {
       return elevators;
    }
+
+   /**
+    * Author: Elijah Smith
+    * accessor for boolean array pushedUp[]
+    */
+   public boolean[] getPushedUpArray() {
+        return this.pushedUp;
+   }
+
+   /**
+    * Author: Elijah Smith
+    * accessor for boolean array pushedDown[]
+    */ 
+   public boolean[] getPushedDownArray() {
+        return this.pushedDown;
+   }
 }
