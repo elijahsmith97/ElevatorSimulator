@@ -100,6 +100,23 @@ public class Tests implements TimerClient
                 assertTrue(state);
             }
         }
+   
+   /**
+    * Author: Elijah Smith
+    * test for getElevators() method
+    */ 
+   @Test
+   public void testGetElevators() {
+        Elevator elev1 = new Elevator(10);
+        Elevator elev2 = new Elevator(10);
+        Elevator[] elevArray = new Elevator[10];
+        Controller control = new DefaultController(elevArray);
+
+        Elevator[] elevArray2 = control.getElevators();
+
+        assertEquals(elevArray, elevArray2);     
+   }
+   
     
     /**
      * Author: Elijah Smith
