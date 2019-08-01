@@ -5,10 +5,11 @@ public class PassengerManager
 {
     private Elevator elevator;    
     private ArrayList<Passenger> passengers;
+    private Controller control;
     
-    public PassengerManager(Elevator[] elevators)
+    public PassengerManager(Controller control)
     {
-       this.elevator = elevators[0];
+       this.control = new control;
        this.passengers = new ArrayList<Passenger>();
     }
     
