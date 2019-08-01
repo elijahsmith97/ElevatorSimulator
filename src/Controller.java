@@ -8,11 +8,16 @@ public abstract class Controller
     * Editor: Elijah Smith
     * initialized size of new pushed fields.
     */  
-   protected Controller(Elevator[] elevators)
+   protected Controller(int numberOfFloors, int numberOfElevators)
    {
-      this.elevators = elevators;
-      pushedUp = new boolean[elevators[1].getNumberOfFloors() + 1];
-      pushedDown = new boolean[elevators[1].getNumberOfFloors() + 1];
+      this.elevators = new Elevator[numberOfElevators];
+      for(int loop = 0; loop < numberOfElevators; loop++)
+      {
+         this.elevators[loop] = new Elevator(numberOfFloors);
+      }
+
+      pushedUp = new boolean[numberOfFloors + 1];
+      pushedDown = new boolean[numberOfFloors + 1];
    }
  
    public abstract void next();

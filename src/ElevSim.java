@@ -4,15 +4,9 @@ public class ElevSim {
     
     
     public static void main(String[] args) throws InterruptedException {
-        Scanner kb = new Scanner(System.in); 
-        Elevator[] elevators = new Elevator[2];
-        int maxFloors = 10;
-        elevators[0] = new Elevator(maxFloors);
-        Elevator elev = elevators[0];
-        
       
         System.out.println("Welcome to the Elevator Simulator.");
-        Controller control = new DefaultController(elevators);
+        Controller control = new DefaultController(10, 2);
         PassengerManager passengerManager = new PassengerManager(control); 
         Passenger pass = new Passenger(elev, 0);
         
