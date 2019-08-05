@@ -15,19 +15,16 @@ public class ElevSim
         Passenger p2 = passengerManager.newPassenger();
         
         Elevator[] elevs = control.getElevators();
-
-        disp.display();
         
-        int i = 0;
-        while(i != 1)
+        while(true)
         {
-            disp.display(); 
+            disp.display();
             disp.printPassenger(1, p1);
+            disp.printPassenger(2, p2);
             disp.printElevator(1, elevs[0]);
-            
+            disp.printElevator(2, elevs[1]);     
             passengerManager.next();
             control.next(); 
-            i = 1;
         }
    }
 }
