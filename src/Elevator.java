@@ -34,6 +34,7 @@ public class Elevator {
      * @throws Exception 
      */
     public void moveDown() {
+        
         time.run();
         currentFloor--;
         this.stopped = false;
