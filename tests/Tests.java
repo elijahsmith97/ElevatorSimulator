@@ -189,18 +189,24 @@ public class Tests implements TimerClient
 
     }
 
-/* needs to change
+
+/**
+ * Author: Elijah Smith
+ * New test for next() within Passenger
+ */ 
  @Test
    public void testPassengerNext1()
    {
-      Elevator elev = new Elevator(1, 10);
-      Passenger pass = new Passenger(elev, 7);
+      Controller control = new DefaultController(10, 2); 
+      
+      Passenger pass = new Passenger(control, 7, 10);
+      Passenger pass2 = new Passenger(control, 2, 1);   
 
       pass.next();
+      pass.next();
 
-      assertEquals(true, elev.pushTrue());      
-   }
-*/  
+      assertEquals(2, control.pushTrue());      
+   } 
 
    @Test
    public void testHasDestFloor()
