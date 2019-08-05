@@ -37,6 +37,7 @@ public class Elevator {
         
         time.run();
         currentFloor--;
+        System.out.print("\007");
         this.stopped = false;
     }
     
@@ -47,6 +48,7 @@ public class Elevator {
     public void moveUp() {
         time.run();
         currentFloor++;
+        System.out.print("\007");
         this.stopped = false;
     }
    
