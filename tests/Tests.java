@@ -134,7 +134,7 @@ public class Tests implements TimerClient
 
         assertEquals(true, pushedUp1);
         assertEquals(true, pushedUp2);
-        assertEqauls(true, pushedUp3);
+        assertEquals(true, pushedUp3);
     }
 
    /**
@@ -155,7 +155,7 @@ public class Tests implements TimerClient
 
         assertEquals(true, pushedDown1);
         assertEquals(true, pushedDown2);
-        assertEqausl(true, pushedDown3);
+        assertEquals(true, pushedDown3);
     }
 
    
