@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class DefaultController extends Controller
 {
+   private Timer time = new Timer(3000);
    private boolean leftMovingUp;
    private boolean leftMovingDown;
    private boolean leftRest;
@@ -124,7 +125,7 @@ public class DefaultController extends Controller
       {
          rightElev.moveDown();
       }
-   
+      time.run();
    }
   
 }
