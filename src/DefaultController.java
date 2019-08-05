@@ -15,6 +15,8 @@ public class DefaultController extends Controller
    {
       super(numberOfFloors, numberOfElevators);
       
+      super.elevators[1] = new Elevator(super.numberOfFloors, super.numberOfFloors);
+      
       leftMovingUp = false;
       leftMovingDown = false;
       leftRest = true;
