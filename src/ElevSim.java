@@ -1,9 +1,10 @@
 import java.util.Scanner; 
 
-public class ElevSim {
+public class ElevSim 
+{    
     
-    
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) 
+    {
       
         Controller control = new DefaultController(10, 2);
         PassengerManager passengerManager = new PassengerManager(control); 
