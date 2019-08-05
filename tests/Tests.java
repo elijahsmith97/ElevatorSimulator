@@ -214,6 +214,27 @@ public class Tests implements TimerClient
       assertEquals(1, elev.hasDestFloors());  
    }
 
+   @Test
+     public void testpushTrue()
+   {
+      Elevator[] elevators = new Elevator[2];
+      DefaultController control = new DefaultController(10, 0);
+      assertEquals(0, control.pushTrue());   
+   }
+
+
+   @Test
+   public void testpushTrue1()
+   {
+      Controller control = new DefaultController(10,3);  
+      control.pushUp(1);
+      control.pushUp(3);
+      control.pushDown(8);
+      
+      int count = control.pushTrue();
+     
+      assertEquals(3, count);   
+   }
 
 /* needs to change  
    @Test
