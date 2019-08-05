@@ -19,10 +19,6 @@ public class ElevSim
         while(true)
         {
             disp.display();
-            disp.printPassenger(1, p1);
-            disp.printPassenger(2, p2);
-            disp.printElevator(1, elevs[0]);
-            disp.printElevator(2, elevs[1]);     
             passengerManager.next();
             control.next(); 
         }

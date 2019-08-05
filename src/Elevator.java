@@ -4,9 +4,8 @@ public class Elevator {
     private boolean[] destinationFloor;
     private int numberOfFloors;
     private boolean stopped;
-    private Timer time = new Timer(3000);
-  
-    /**
+    
+    /*
      * Author: Elijah Smith
      * Issue #61 new Constructor
      */ 
@@ -34,8 +33,6 @@ public class Elevator {
      * @throws Exception 
      */
     public void moveDown() {
-        
-        time.run();
         currentFloor--;
         System.out.print("\007");
         this.stopped = false;
@@ -46,7 +43,6 @@ public class Elevator {
     * Issue #57/51 moveUp
     */
     public void moveUp() {
-        time.run();
         currentFloor++;
         System.out.print("\007");
         this.stopped = false;
