@@ -107,19 +107,12 @@ public class Tests implements TimerClient
     */ 
    @Test
    public void testGetElevators() {
-        Elevator elev1 = new Elevator(10);
-        Elevator elev2 = new Elevator(10);
-        Elevator[] elevArray = new Elevator[10];
-        elevArray[0] = elev1;
-        elevArray[1] = elev2;
-        Controller control = new DefaultController(elevArray);
-
-        Elevator[] elevArray2 = control.getElevators();
-        Elevator elev3 = elevArray2[0];
-        Elevator elev4 = elevArray2[1];
-
-        assertEquals(elev1, elev3); 
-        assertEquals(elev2, elev4);    
+        Controller control = new DefaultController(10, 2);
+        Elevator[] elevArray = control.getElevators();
+        Elevator elev1 = elevArray[0]; 
+        Elevator elev2 = elevArray[1];
+        
+        assertEquals(elev1, elev2);
    }
    
    
