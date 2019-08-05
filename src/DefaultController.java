@@ -3,60 +3,126 @@ import java.util.ArrayList;
 
 public class DefaultController extends Controller
 {
-   private boolean movingUp;
-   private boolean movingDown;
+   private boolean leftMovingUp;
+   private boolean leftMovingDown;
+   private boolean leftRest;
+
+   private boolean rightMovingUp;
+   private boolean rightMovingDown;
+   private boolean rightRest;
    
    public DefaultController(int numberOfFloors, int numberOfElevators)
    {
       super(numberOfFloors, numberOfElevators);
       
-      this.movingUp = false;
-      this.movingDown = false;
+      leftMovingUp = false;
+      leftMovingDown = false;
+      leftRest = true;
+
+      rightMovingUp = false;
+      rightMovingDown = false;
+      rightRest = true;
    }
 
    public void next()
    {
-      /*      
-      int maxFloor = elevator.getNumberOfFloors();
-      int currentFloor = elevator.getCurrentFloor();
+      Elevator leftElev = super.elevators[0];
+      int leftCurrentFloor = leftElev.getCurrentFloor();
+      boolean[] leftDestFloors = leftElev.getDestinationFloor();
 
-      boolean[] destFloors = elevator.getDestinationFloor();
+      Elevator rightElev = super.elevators[1];
+      int rightCurrentFloor = rightElev.getCurrentFloor();
+      boolean[] rightDestFloors = rightElev.getDestinationFloor();
 
-     // boolean pushUpFloors[] = elevator.getPushedUp();
-     // boolean pushDownFloors[] = elevator.getPushedDown();
-     // boolean pushTrue = elevator.pushTrue();
-
-      int destFloorCount = elevator.hasDestFloors();
-
-      if(currentFloor == 1 || currentFloor == maxFloor)
+      if(super.pushTrue() == 0)
       {
-         movingUp = false;
-         movingDown = false;
+         if(leftElev.hasDestFloors() == 0)
+         {
+            if(leftCurrentFloor > 1)
+            {
+               leftMovingDown = true;
+               leftMovingUp = false;
+            }
+            else
+            {
+               leftMovingDown = false;
+               leftMovingUp = false;
+               leftRest = true;
+            }
+         }
+
+         if(rightElev.hasDestFloors() == 0)
+         {
+            if(rightCurrentFloor < super.numberOfFloors)
+            {
+               rightMovingUp = true;
+               rightMovingDown = false;
+            }
+            else 
+            {
+               rightMovingUp = false;
+               rightMovingDown = false;
+               rightRest = true;
+            }
+         }
+      }
+      else
+      {
+         int pushedUp = 0;
+         int pushedDown = 0;
+         
+         for(int loop = 1; loop <= super.numberOfFloors; loop++)
+         {
+            if(super.pushedUp[loop])
+               pushedUp++;
+
+            if(super.pushedDown[loop])
+               pushedDown++;
+         }
+         
+         if(pushedUp > 0 && !rightMovingUp && !leftMovingUp)
+         {
+            leftMovingUp = true;
+            leftMovingDown = false;
+            leftRest = false;
+         }
+
+         if(pushedDown > 0 && !rightMovingDown && !leftMovingDown)
+         {
+            rightMovingDown = true;
+            rightMovingUp = false;
+            rightRest = false;
+         }
+
+      }
+      
+
+      if((leftMovingUp && pushedUp[leftCurrentFloor]) || (leftMovingDown && pushedDown[leftCurrentFloor]) || leftDestFloors[leftCurrentFloor])
+      {
+         leftElev.stop();
+      }
+      else if(leftMovingUp)
+      {
+         leftElev.moveUp();
+      }
+      else if(leftMovingDown)
+      {
+         leftElev.moveDown();
       }
 
-      if(currentFloor == 1 && (destFloorCount == 0 /*|| pushTrue))
+      if((rightMovingUp && pushedUp[rightCurrentFloor]) || (rightMovingDown && pushedDown[rightCurrentFloor]) || rightDestFloors[rightCurrentFloor])
       {
-         movingUp = true;
+         rightElev.stop();
       }
-      else if (currentFloor == maxFloor && (destFloorCount == 0 /*|| pushTrue))
+      else if(rightMovingUp)
       {
-         movingDown = true;
+         rightElev.moveUp();
       }
-
-      if(destFloors[currentFloor] || (movingUp /*&& pushUpFloors[currentFloor]) || (movingDown /*&& pushDownFloors[currentFloor]))
+      else if(rightMovingDown)
       {
-         elevator.stop();
+         rightElev.moveDown();
       }
-      else if(movingUp)
-      {
-         elevator.moveUp();
-      }
-      else if(movingDown)
-      {
-         elevator.moveDown();
-      }
-
-      */
+   
    }
   
 }
