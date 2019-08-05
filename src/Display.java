@@ -80,6 +80,7 @@ public class Display
             }
 
          }
+         System.out.println("Elevator doors have closed.");
       }
       else
       {
