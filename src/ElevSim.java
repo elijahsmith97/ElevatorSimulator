@@ -8,16 +8,26 @@ public class ElevSim
       
         Controller control = new DefaultController(10, 2);
         PassengerManager passengerManager = new PassengerManager(control); 
+        Display disp = new Display(passengerManager, control);
+
         Passenger pass = new Passenger(control, 0);
-        
         Passenger p1 = passengerManager.newPassenger();
         Passenger p2 = passengerManager.newPassenger();
         
+        Elevator[] elevs = control.getElevators();
+
+        disp.display();
         
-        while(true)
+        int i = 0;
+        while(i != 1)
         {
+            disp.display(); 
+            disp.printPassenger(1, p1);
+            disp.printElevator(1, elevs[0]);
+            
             passengerManager.next();
             control.next(); 
+            i = 1;
         }
    }
 }
